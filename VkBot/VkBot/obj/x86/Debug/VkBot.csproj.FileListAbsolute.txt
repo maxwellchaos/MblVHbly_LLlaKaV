@@ -1,0 +1,16 @@
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\bin\Debug\VkBot.exe
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\bin\Debug\VkBot.pdb
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\obj\x86\Debug\VkBot.Form1.resources
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\obj\x86\Debug\VkBot.Properties.Resources.resources
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\obj\x86\Debug\VkBot.csproj.GenerateResource.Cache
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\obj\x86\Debug\VkBot.exe
+C:\Users\User\AppData\Local\Temporary Projects\VkBot\obj\x86\Debug\VkBot.pdb
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.exe
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.pdb
+D:\айтишка\VkBot\VkBot\bin\Debug\VkBot.exe
+D:\айтишка\VkBot\VkBot\bin\Debug\VkBot.pdb
+D:\айтишка\VkBot\VkBot\bin\Debug\Newtonsoft.Json.dll
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.csprojResolveAssemblyReference.cache
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.Form1.resources
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.Properties.Resources.resources
+D:\айтишка\VkBot\VkBot\obj\x86\Debug\VkBot.csproj.GenerateResource.Cache
