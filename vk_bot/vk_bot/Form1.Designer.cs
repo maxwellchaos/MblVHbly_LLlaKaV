@@ -34,6 +34,7 @@
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
+            this.EvilLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,21 @@
             this.AutoMessageButton.UseVisualStyleBackColor = true;
             this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
+            // EvilLabel
+            // 
+            this.EvilLabel.AutoSize = true;
+            this.EvilLabel.Location = new System.Drawing.Point(386, 311);
+            this.EvilLabel.Name = "EvilLabel";
+            this.EvilLabel.Size = new System.Drawing.Size(35, 13);
+            this.EvilLabel.TabIndex = 6;
+            this.EvilLabel.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+            this.Controls.Add(this.EvilLabel);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
@@ -123,6 +134,7 @@
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
+        private System.Windows.Forms.Label EvilLabel;
     }
 }
 

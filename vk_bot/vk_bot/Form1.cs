@@ -24,22 +24,35 @@ namespace vk_bot
         {
             if (e.Url.ToString().Contains("access_token="))
             {
-                webBrowser1.Visible = false;
-                access_token = e.Url.ToString();
-                int pos = access_token.IndexOf("access_token=");
-                pos += "access_token=".Length;
-                access_token = access_token.Remove(0, pos);
-                pos = access_token.IndexOf("&");
-                access_token = access_token.Remove(pos);
-                string request = "https://api.vk.com/method/users.get?user_ids=56929156&fields=photo_100,bdate&access_token="  +access_token+ "&v=5.87";
-                //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
-                WebClient client = new WebClient();
-                //string answer = client.DownloadString(request);
-                string answer = Encoding.UTF8.GetString( client.DownloadData(request));
-                User user = JsonConvert.DeserializeObject<User>(answer);
+                try
+                {
+                    webBrowser1.Visible = false;
+                    access_token = e.Url.ToString();
+                    int pos = access_token.IndexOf("access_token=");
+                    pos += "access_token=".Length;
+                    access_token = access_token.Remove(0, pos);
+                    pos = access_token.IndexOf("&");
+                    access_token = access_token.Remove(pos);
 
-                AvatarPictureBox.Load(user.response[0].photo_100);
-                FirstNameLabel.Text = user.response[0].first_name;
+                    string request = "https://api.vk.com/method/users.get?user_ids=56929156&filds=photo_100,bdate&access_token=" + access_token + "&v=5.87";
+                    WebClient client = new WebClient();
+                    string answer = Encoding.UTF8.GetString(client.DownloadData(request));
+                    if (answer.Contains("error"))
+                    {
+                        throw new Exception();
+                    }
+                    
+                    User user = JsonConvert.DeserializeObject<User>(answer);
+
+                    AvatarPictureBox.Load(user.response[0].photo_100);
+                    FirstNameLabel.Text = user.response[0].first_name;
+                    
+                }
+                catch (Exception)
+                {
+                    EvilLabel.Text = "вОЗНИКЛА оШИбКА!";
+                }
+
             }
         }
 
