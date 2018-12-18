@@ -34,6 +34,7 @@
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
+            this.delete_friends = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,8 +46,9 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(822, 420);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=1&display=page&redirect_uri=https://oaut" +
-                    "h.vk.com/blank.html&scope=friends,wall&response_type=token&v=5.87&state=123456", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6740394&display=page&redirect_uri=https:" +
+                    "//oauth.vk.com/blank.html&scope=friends,messages&response_type=token&v=5.87&stat" +
+                    "e=123456", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // AvatarPictureBox
@@ -95,11 +97,23 @@
             this.AutoMessageButton.UseVisualStyleBackColor = true;
             this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
+            // delete_friends
+            // 
+            this.delete_friends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete_friends.Location = new System.Drawing.Point(252, 189);
+            this.delete_friends.Name = "delete_friends";
+            this.delete_friends.Size = new System.Drawing.Size(187, 54);
+            this.delete_friends.TabIndex = 6;
+            this.delete_friends.Text = "Удаление друзей";
+            this.delete_friends.UseVisualStyleBackColor = true;
+            this.delete_friends.Click += new System.EventHandler(this.delete_friends_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+            this.Controls.Add(this.delete_friends);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
@@ -123,6 +137,7 @@
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
+        private System.Windows.Forms.Button delete_friends;
     }
 }
 

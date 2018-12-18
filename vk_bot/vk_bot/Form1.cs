@@ -15,6 +15,7 @@ namespace vk_bot
     public partial class Form1 : Form
     {
         string access_token;
+
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace vk_bot
                 //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
                 WebClient client = new WebClient();
                 //string answer = client.DownloadString(request);
-                string answer = Encoding.UTF8.GetString( client.DownloadData(request));
+                string answer = Encoding.UTF8.GetString(client.DownloadData(request));
                 User user = JsonConvert.DeserializeObject<User>(answer);
 
                 AvatarPictureBox.Load(user.response[0].photo_100);
@@ -58,6 +59,13 @@ namespace vk_bot
         {
             AutoMessageForm amfrm = new AutoMessageForm();
             amfrm.ShowDialog();
+        }
+
+        private void delete_friends_Click(object sender, EventArgs e)
+        {
+            delete_friend dlf = new delete_friend();
+            dlf.access_token = access_token;
+            dlf.ShowDialog();
         }
     }
 }
