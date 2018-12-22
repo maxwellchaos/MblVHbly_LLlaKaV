@@ -1,6 +1,6 @@
 ﻿namespace vk_bot
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -30,11 +30,10 @@
         {
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.SecondNameLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
-            this.EvilLabel = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,35 +52,26 @@
             // 
             // AvatarPictureBox
             // 
-            this.AvatarPictureBox.Location = new System.Drawing.Point(37, 73);
+            this.AvatarPictureBox.Location = new System.Drawing.Point(39, 56);
             this.AvatarPictureBox.Name = "AvatarPictureBox";
             this.AvatarPictureBox.Size = new System.Drawing.Size(150, 140);
             this.AvatarPictureBox.TabIndex = 1;
             this.AvatarPictureBox.TabStop = false;
             // 
-            // FirstNameLabel
+            // NameLabel
             // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstNameLabel.Location = new System.Drawing.Point(33, 9);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(51, 20);
-            this.FirstNameLabel.TabIndex = 2;
-            this.FirstNameLabel.Text = "label1";
-            // 
-            // SecondNameLabel
-            // 
-            this.SecondNameLabel.AutoSize = true;
-            this.SecondNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SecondNameLabel.Location = new System.Drawing.Point(33, 32);
-            this.SecondNameLabel.Name = "SecondNameLabel";
-            this.SecondNameLabel.Size = new System.Drawing.Size(51, 20);
-            this.SecondNameLabel.TabIndex = 3;
-            this.SecondNameLabel.Text = "label2";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameLabel.Location = new System.Drawing.Point(33, 9);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(86, 31);
+            this.NameLabel.TabIndex = 2;
+            this.NameLabel.Text = "Name";
             // 
             // autoAnswerButton
             // 
-            this.autoAnswerButton.Location = new System.Drawing.Point(252, 73);
+            this.autoAnswerButton.Location = new System.Drawing.Point(252, 56);
             this.autoAnswerButton.Name = "autoAnswerButton";
             this.autoAnswerButton.Size = new System.Drawing.Size(187, 53);
             this.autoAnswerButton.TabIndex = 4;
@@ -91,7 +81,7 @@
             // 
             // AutoMessageButton
             // 
-            this.AutoMessageButton.Location = new System.Drawing.Point(252, 159);
+            this.AutoMessageButton.Location = new System.Drawing.Point(252, 142);
             this.AutoMessageButton.Name = "AutoMessageButton";
             this.AutoMessageButton.Size = new System.Drawing.Size(187, 54);
             this.AutoMessageButton.TabIndex = 5;
@@ -99,29 +89,31 @@
             this.AutoMessageButton.UseVisualStyleBackColor = true;
             this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
-            // EvilLabel
+            // ErrorLabel
             // 
-            this.EvilLabel.AutoSize = true;
-            this.EvilLabel.Location = new System.Drawing.Point(386, 311);
-            this.EvilLabel.Name = "EvilLabel";
-            this.EvilLabel.Size = new System.Drawing.Size(35, 13);
-            this.EvilLabel.TabIndex = 6;
-            this.EvilLabel.Text = "label1";
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ErrorLabel.Location = new System.Drawing.Point(194, 299);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(74, 31);
+            this.ErrorLabel.TabIndex = 6;
+            this.ErrorLabel.Text = "Error";
+            this.ErrorLabel.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
-            this.Controls.Add(this.EvilLabel);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
-            this.Controls.Add(this.SecondNameLabel);
-            this.Controls.Add(this.FirstNameLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AvatarPictureBox);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "VK Bot";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -133,11 +125,10 @@
 
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.PictureBox AvatarPictureBox;
-        private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Label SecondNameLabel;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
-        private System.Windows.Forms.Label EvilLabel;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }
 

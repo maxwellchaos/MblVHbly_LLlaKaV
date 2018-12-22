@@ -12,14 +12,13 @@ using Newtonsoft.Json;
 
 namespace vk_bot
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
         string access_token;
         public string userId;
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
-            //DateTime dt = DateTime.UtcNow;
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -34,18 +33,21 @@ namespace vk_bot
                 pos = access_token.IndexOf("&");
                 access_token = access_token.Remove(pos);
                 string request = "https://api.vk.com/method/users.get?fields=photo_100,bdate&access_token=" + access_token + "&v=5.87";
-                //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
                 WebClient client = new WebClient();
-                //string answer = client.DownloadString(request);
                 string answer = Encoding.UTF8.GetString( client.DownloadData(request));
                 User user = JsonConvert.DeserializeObject<User>(answer);
 
-                AvatarPictureBox.Load(user.response[0].photo_100);
-                FirstNameLabel.Text = user.response[0].first_name;
-                SecondNameLabel.Text = user.response[0].last_name;
-                userId = user.response[0].id;
-
-
+                try
+                {
+                    AvatarPictureBox.Load(user.response[0].photo_100);
+                    NameLabel.Text = user.response[0].first_name + " " + user.response[0].last_name;
+                    userId = user.response[0].id;
+                }
+                catch (Exception)
+                {
+                    ErrorLabel.Text = "Возникла непредвиденная ошибка";
+                    ErrorLabel.Visible = true;
+                }
             }
         }
 

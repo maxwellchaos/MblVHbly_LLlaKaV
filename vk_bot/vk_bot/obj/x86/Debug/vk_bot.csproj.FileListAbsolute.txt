@@ -30,3 +30,45 @@ C:\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.re
 C:\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
 C:\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
 C:\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
+E:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.exe
+E:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
+E:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
+E:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.FormPreceous.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
+J:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.exe
+J:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
+J:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.PostsForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
+D:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.exe
+D:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
+D:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.PostsForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentForm.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComment.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComment.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentErrorForm.resources
+D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.MainMenu.resources
+
