@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
+            this.Prostoknopka = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.EvilLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,8 +49,9 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(822, 420);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=1&display=page&redirect_uri=https://oaut" +
-                    "h.vk.com/blank.html&scope=friends,wall&response_type=token&v=5.87&state=123456", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410347&display=page&redirect_uri=https:" +
+                    "//oauth.vk.com/blank.html&scope=messages&response_type=token&v=5.87&state=123456" +
+                    "", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // AvatarPictureBox
@@ -95,11 +100,38 @@
             this.AutoMessageButton.UseVisualStyleBackColor = true;
             this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
+            // Prostoknopka
+            // 
+            this.Prostoknopka.Location = new System.Drawing.Point(252, 186);
+            this.Prostoknopka.Name = "Prostoknopka";
+            this.Prostoknopka.Size = new System.Drawing.Size(187, 56);
+            this.Prostoknopka.TabIndex = 6;
+            this.Prostoknopka.Text = "Pusia";
+            this.Prostoknopka.UseVisualStyleBackColor = true;
+            this.Prostoknopka.Click += new System.EventHandler(this.Prostoknopka_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // EvilLabel
+            // 
+            this.EvilLabel.AutoSize = true;
+            this.EvilLabel.Location = new System.Drawing.Point(567, 294);
+            this.EvilLabel.Name = "EvilLabel";
+            this.EvilLabel.Size = new System.Drawing.Size(35, 13);
+            this.EvilLabel.TabIndex = 7;
+            this.EvilLabel.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+            this.Controls.Add(this.EvilLabel);
+            this.Controls.Add(this.Prostoknopka);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
@@ -123,6 +155,9 @@
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
+        private System.Windows.Forms.Button Prostoknopka;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label EvilLabel;
     }
 }
 

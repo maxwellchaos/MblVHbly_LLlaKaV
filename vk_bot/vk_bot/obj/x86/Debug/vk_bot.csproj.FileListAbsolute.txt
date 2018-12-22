@@ -19,3 +19,15 @@ C:\Users\rrr\documents\visual studio 2010\Projects\vk_bot\vk_bot\obj\x86\Debug\G
 C:\Users\rrr\documents\visual studio 2010\Projects\vk_bot\vk_bot\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\rrr\documents\visual studio 2010\Projects\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
 C:\Users\rrr\documents\visual studio 2010\Projects\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Pusia.resources
+C:\Users\User\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
