@@ -60,13 +60,14 @@
             // 
             // btclick
             // 
+            this.btclick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btclick.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btclick.Location = new System.Drawing.Point(380, 78);
             this.btclick.Name = "btclick";
             this.btclick.Size = new System.Drawing.Size(167, 67);
             this.btclick.TabIndex = 2;
             this.btclick.Text = "применить";
-            this.btclick.UseVisualStyleBackColor = true;
+            this.btclick.UseVisualStyleBackColor = false;
             this.btclick.Click += new System.EventHandler(this.button1_Click);
             // 
             // ttbox
@@ -105,7 +106,9 @@
             // sclab
             // 
             this.sclab.AutoSize = true;
-            this.sclab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sclab.BackColor = System.Drawing.Color.Yellow;
+            this.sclab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sclab.ForeColor = System.Drawing.Color.Red;
             this.sclab.Location = new System.Drawing.Point(210, 168);
             this.sclab.Name = "sclab";
             this.sclab.Size = new System.Drawing.Size(149, 25);
@@ -128,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(635, 376);
             this.Controls.Add(this.sclab);
             this.Controls.Add(this.idbox);
