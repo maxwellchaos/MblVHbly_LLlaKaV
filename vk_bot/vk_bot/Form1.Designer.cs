@@ -34,7 +34,10 @@
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
-            this.EvilLabel = new System.Windows.Forms.Label();
+            this.sendphoto = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,13 +50,13 @@
             this.webBrowser1.Size = new System.Drawing.Size(822, 420);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410346&display=page&redirect_uri=https:" +
-                    "//oauth.vk.com/blank.html&scope=friends,wall,groups&response_type=token&v=5.87&s" +
-                    "tate=123456", System.UriKind.Absolute);
+                    "//oauth.vk.com/blank.html&scope=friends,wall,messages&response_type=token&v=5.87" +
+                    "&state=123456", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // AvatarPictureBox
             // 
-            this.AvatarPictureBox.Location = new System.Drawing.Point(37, 73);
+            this.AvatarPictureBox.Location = new System.Drawing.Point(38, 128);
             this.AvatarPictureBox.Name = "AvatarPictureBox";
             this.AvatarPictureBox.Size = new System.Drawing.Size(150, 140);
             this.AvatarPictureBox.TabIndex = 1;
@@ -62,26 +65,24 @@
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstNameLabel.Location = new System.Drawing.Point(33, 9);
+            this.FirstNameLabel.Location = new System.Drawing.Point(71, 9);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.FirstNameLabel.Size = new System.Drawing.Size(35, 13);
             this.FirstNameLabel.TabIndex = 2;
             this.FirstNameLabel.Text = "label1";
             // 
             // SecondNameLabel
             // 
             this.SecondNameLabel.AutoSize = true;
-            this.SecondNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SecondNameLabel.Location = new System.Drawing.Point(33, 32);
+            this.SecondNameLabel.Location = new System.Drawing.Point(71, 69);
             this.SecondNameLabel.Name = "SecondNameLabel";
-            this.SecondNameLabel.Size = new System.Drawing.Size(51, 20);
+            this.SecondNameLabel.Size = new System.Drawing.Size(35, 13);
             this.SecondNameLabel.TabIndex = 3;
             this.SecondNameLabel.Text = "label2";
             // 
             // autoAnswerButton
             // 
-            this.autoAnswerButton.Location = new System.Drawing.Point(252, 73);
+            this.autoAnswerButton.Location = new System.Drawing.Point(252, 17);
             this.autoAnswerButton.Name = "autoAnswerButton";
             this.autoAnswerButton.Size = new System.Drawing.Size(187, 53);
             this.autoAnswerButton.TabIndex = 4;
@@ -91,7 +92,7 @@
             // 
             // AutoMessageButton
             // 
-            this.AutoMessageButton.Location = new System.Drawing.Point(252, 159);
+            this.AutoMessageButton.Location = new System.Drawing.Point(252, 100);
             this.AutoMessageButton.Name = "AutoMessageButton";
             this.AutoMessageButton.Size = new System.Drawing.Size(187, 54);
             this.AutoMessageButton.TabIndex = 5;
@@ -99,21 +100,55 @@
             this.AutoMessageButton.UseVisualStyleBackColor = true;
             this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
-            // EvilLabel
+            // sendphoto
             // 
-            this.EvilLabel.AutoSize = true;
-            this.EvilLabel.Location = new System.Drawing.Point(386, 311);
-            this.EvilLabel.Name = "EvilLabel";
-            this.EvilLabel.Size = new System.Drawing.Size(35, 13);
-            this.EvilLabel.TabIndex = 6;
-            this.EvilLabel.Text = "label1";
+            this.sendphoto.Location = new System.Drawing.Point(252, 179);
+            this.sendphoto.Name = "sendphoto";
+            this.sendphoto.Size = new System.Drawing.Size(187, 54);
+            this.sendphoto.TabIndex = 6;
+            this.sendphoto.Text = "Прислать любой мем/фото из поста заданного сообщества";
+            this.sendphoto.UseVisualStyleBackColor = true;
+            this.sendphoto.Click += new System.EventHandler(this.sendphoto_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.progressBar1.Location = new System.Drawing.Point(38, 367);
+            this.progressBar1.Maximum = 0;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(401, 41);
+            this.progressBar1.TabIndex = 7;
+            this.progressBar1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 351);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Загружаем ваши группы";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(472, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 31);
+            this.label2.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
-            this.Controls.Add(this.EvilLabel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.sendphoto);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
@@ -137,7 +172,10 @@
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
-        private System.Windows.Forms.Label EvilLabel;
+        private System.Windows.Forms.Button sendphoto;
+        public System.Windows.Forms.ProgressBar progressBar1;
+        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
