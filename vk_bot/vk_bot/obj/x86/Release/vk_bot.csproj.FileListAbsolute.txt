@@ -1,0 +1,13 @@
+C:\Users\qqq\Desktop\vk_bot\vk_bot\bin\Release\vk_bot.exe
+C:\Users\qqq\Desktop\vk_bot\vk_bot\bin\Release\vk_bot.pdb
+C:\Users\qqq\Desktop\vk_bot\vk_bot\bin\Release\Newtonsoft.Json.dll
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.csprojResolveAssemblyReference.cache
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.AButton.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.AutoAnswerForm.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.AutoMessageForm.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.Form1.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.Post.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.Properties.Resources.resources
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.csproj.GenerateResource.Cache
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.exe
+C:\Users\qqq\Desktop\vk_bot\vk_bot\obj\x86\Release\vk_bot.pdb

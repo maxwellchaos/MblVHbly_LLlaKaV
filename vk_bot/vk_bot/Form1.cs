@@ -14,8 +14,10 @@ namespace vk_bot
 {
     public partial class Form1 : Form
     {
-        string access_token;
+
         public static string idd;
+        public static string access_token;
+
         public Form1()
         {
             InitializeComponent();
@@ -95,6 +97,7 @@ namespace vk_bot
             amfrm.ShowDialog();
         }
 
+
         private void sendphoto_Click(object sender, EventArgs e)
         {
             try
@@ -110,7 +113,17 @@ namespace vk_bot
             {
                 label2.Text = "Возникла ошибка !";
             }
-           
+        }
+
+        private void AButton_Click(object sender, EventArgs e)
+        {
+            AButton frm = new AButton();
+            frm.access_token = access_token;
+            frm.ShowDialog();
+
+
+
         }
     }
 }
+

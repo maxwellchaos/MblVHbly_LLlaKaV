@@ -34,10 +34,14 @@
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
+
             this.sendphoto = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+
+            this.AButto = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,8 +54,10 @@
             this.webBrowser1.Size = new System.Drawing.Size(822, 420);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410346&display=page&redirect_uri=https:" +
+
                     "//oauth.vk.com/blank.html&scope=friends,wall,messages&response_type=token&v=5.87" +
                     "&state=123456", System.UriKind.Absolute);
+
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // AvatarPictureBox
@@ -139,16 +145,31 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 31);
             this.label2.TabIndex = 9;
+
+            // AButto
+            // 
+            this.AButto.Location = new System.Drawing.Point(252, 184);
+            this.AButto.Name = "AButto";
+            this.AButto.Size = new System.Drawing.Size(187, 54);
+            this.AButto.TabIndex = 6;
+            this.AButto.Text = "лайк первогопоста в группе";
+            this.AButto.UseVisualStyleBackColor = true;
+            this.AButto.Click += new System.EventHandler(this.AButton_Click);
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.sendphoto);
+
+            this.Controls.Add(this.AButto);
+
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
@@ -172,10 +193,14 @@
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
+
         private System.Windows.Forms.Button sendphoto;
         public System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.Button AButto;
+
     }
 }
 
