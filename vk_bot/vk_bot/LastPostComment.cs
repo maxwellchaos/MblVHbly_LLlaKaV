@@ -52,18 +52,19 @@ namespace vk_bot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = 1000;
-            
             DateTime now = DateTime.UtcNow;
             
-
             foreach (string groupId in grIds)
             {
                 DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                 string request = "https://api.vk.com/method/wall.get?owner_id=-" + groupId + "&count=2&extended=1&access_token=" + access_token + "&v=5.87";
                 WebClient client = new WebClient();
                 string answer = Encoding.UTF8.GetString(client.DownloadData(request));
-                System.Threading.Thread.Sleep(100);//Ждать 100 мс
+                System.Threading.Thread.Sleep(30);//Ждать 30 мс
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(30);//Ждать 100 мс
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(30);//Ждать 100 мс
 
                 Post po = new Post();
                 po = JsonConvert.DeserializeObject<Post>(answer);
@@ -92,7 +93,7 @@ namespace vk_bot
 
                 Comments co = new Comments();
                 co = JsonConvert.DeserializeObject<Comments>(answer3);
-
+                Application.DoEvents();
                 origin = origin.AddSeconds(postTime);
                 bool fi = false;
 
@@ -108,14 +109,14 @@ namespace vk_bot
                 }
                 catch (Exception)
                 {
-                    ErrorLabel.Visible = true;
+
                 }
-                
+                Application.DoEvents();
                 if (now < origin.AddMinutes(1) && fi == false)
                 {
                     try
                     {
-                        string request2 = "https://api.vk.com/method/wall.createComment?owner_id=-" + groupId + "&post_id=" + postId + "&message=" + listBox1.Text + "&access_token=s" + access_token + "&v=5.87";
+                        string request2 = "https://api.vk.com/method/wall.createComment?owner_id=-" + groupId + "&post_id=" + postId + "&message=" + listBox1.Text + "&access_token=" + access_token + "&v=5.87";
                         string answer2 = Encoding.UTF8.GetString(client.DownloadData(request2));
 
                         if (answer.Contains("error"))

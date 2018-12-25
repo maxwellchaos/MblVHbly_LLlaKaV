@@ -50,7 +50,6 @@ J:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
-J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.PostsForm.resources
@@ -71,4 +70,6 @@ D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComm
 J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComment.resources
 D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentErrorForm.resources
 D:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.MainMenu.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentErrorForm.resources
+J:\Айтишка\3 модуль\vk_bot\vk_bot\obj\x86\Debug\vk_bot.MainMenu.resources
 
