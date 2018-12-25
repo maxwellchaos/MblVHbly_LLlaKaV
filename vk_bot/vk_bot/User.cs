@@ -249,12 +249,11 @@ namespace vk_bot
         }
     }
 
-
-
     public class groups
     {
         public Response response { get; set; }
-                public class Item
+        
+        public class Item
         {
             public int id { get; set; }
             public string name { get; set; }
@@ -267,14 +266,14 @@ namespace vk_bot
             public string photo_200 { get; set; }
 
         }
-
         public class Response
         {
             public int count { get; set; }
             public Item[] items { get; set; }
         }
-
     }
+
+
     public class groupsGet
     {
         public Response response { get; set; }
@@ -293,12 +292,70 @@ namespace vk_bot
 
         }
 
+    }
+        
+    public class fiendsObject
+    {
+        public Response response { get; set; }
+
         public class Response
         {
             public int count { get; set; }
             public Item[] items { get; set; }
+            public class Item
+            {
+                public string id { get; set; }
+                public string first_name { get; set; }
+                public string last_name { get; set; }
+                public int online { get; set; }
+                public string deactivated { get; set; }
+                public List<int> lists { get; set; }
+            }
         }
+
     }
 
+
+
+    public class RootObject
+    {
+
+
+        public Response response { get; set; }
+        public class Response
+        {
+            public int count { get; set; }
+            public Item[] items { get; set; }
+            public int unread_count { get; set; }
+            public class Item
+            {
+               // public Conversation conversation { get; set; }
+                public LastMessage last_message { get; set; }
+                public class LastMessage
+                {
+                    public int date { get; set; }
+                    public int from_id { get; set; }
+                    public int id { get; set; }
+                    public int @out { get; set; }
+                    public int peer_id { get; set; }
+                    public string text { get; set; }
+                    public int conversation_message_id { get; set; }
+                    public List<object> fwd_messages { get; set; }
+                    public bool important { get; set; }
+                    public int random_id { get; set; }
+                    public List<object> attachments { get; set; }
+                    public bool is_hidden { get; set; }
+                }
+            }
+        }
+
+
+    }
+
+
+
 }
+
+
+
 

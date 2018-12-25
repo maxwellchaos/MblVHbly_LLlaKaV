@@ -18,6 +18,7 @@ namespace vk_bot
         public static string idd;
         public static string access_token;
 
+
         public Form1()
         {
             InitializeComponent();
@@ -98,6 +99,7 @@ namespace vk_bot
         }
 
 
+
         private void sendphoto_Click(object sender, EventArgs e)
         {
             try
@@ -120,8 +122,15 @@ namespace vk_bot
             AButton frm = new AButton();
             frm.access_token = access_token;
             frm.ShowDialog();
+        }
 
 
+
+        private void delete_friends_Click(object sender, EventArgs e)
+        {
+            delete_friend dlf = new delete_friend();
+            dlf.access_token = access_token;
+            dlf.ShowDialog();
 
         }
     }
