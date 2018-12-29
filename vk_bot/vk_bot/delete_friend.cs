@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json;
-using System.Data;
 using System.IO;
 namespace vk_bot
 {

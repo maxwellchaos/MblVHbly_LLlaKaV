@@ -89,12 +89,14 @@ namespace vk_bot
             AutoAnswerForm frm = new AutoAnswerForm();
             frm.access_token = access_token;
             frm.userId = userId;
+            frm.mainform = this;
             frm.Show();
         }
 
         private void AutoMessageButton_Click(object sender, EventArgs e)
         {
             Pusia amfrm = new Pusia();
+            amfrm.access_token = access_token;
             amfrm.ShowDialog();
         }
 
