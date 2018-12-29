@@ -142,6 +142,7 @@
             this.Controls.Add(this.label1);
             this.Name = "LastPostComment";
             this.Text = "LastPostComment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LastPostComment_FormClosing);
             this.Load += new System.EventHandler(this.LastPostComment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

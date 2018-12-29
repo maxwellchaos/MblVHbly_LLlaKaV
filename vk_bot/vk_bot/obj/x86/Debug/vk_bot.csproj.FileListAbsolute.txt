@@ -133,3 +133,5 @@ C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bo
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+D:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.exe.config
+J:\Айтишка\3 модуль\vk_bot\vk_bot\bin\Debug\vk_bot.exe.config

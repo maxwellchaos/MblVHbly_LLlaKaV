@@ -18,6 +18,8 @@ namespace vk_bot
         public string access_token;
         public string groupId;
         public string userId;
+        public MainMenu mainform;
+
         public AutoAnswerForm()
         {
             InitializeComponent();
@@ -37,20 +39,31 @@ namespace vk_bot
             Group gr;
             gr = JsonConvert.DeserializeObject<Group>(answer);
 
+            int groupsValue = 0;
+
             try
             {
                 for (int itemIndex = 0; itemIndex < gr.response.items.Length; itemIndex = itemIndex + 1)
                 {
                     string[] names = new string[3];
+                    groupsValue++;
                     names[0] = gr.response.items[itemIndex].name;
                     names[1] = gr.response.items[itemIndex].id.ToString();
                     names[2] = gr.response.items[itemIndex].photo_50;
                     pictureBox1.Load(gr.response.items[itemIndex].photo_50);
                     Application.DoEvents();
                     imageList1.Images.Add(pictureBox1.Image);
+
+                    mainform.progressBar1.Maximum = gr.response.items.Length;
+                    mainform.progressBar1.Value = groupsValue;
+
                     ListViewItem lvi = new ListViewItem(names, imageList1.Images.Count - 1);
                     listView1.Items.Add(lvi);
 
+                    if (mainform.progressBar1.Value == mainform.progressBar1.Maximum)
+                    {
+                        mainform.progressBar1.Visible = false;
+                    }
                 }
             }
             catch (Exception)

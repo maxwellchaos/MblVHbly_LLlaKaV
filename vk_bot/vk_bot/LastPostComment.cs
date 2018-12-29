@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using System.Collections.ObjectModel;
+using System.IO;
 
 using Newtonsoft.Json;
 
@@ -21,6 +22,7 @@ namespace vk_bot
         public string userId;
         public int postTime;
         public Collection<string> grIds = new Collection<string>();
+        string path = Application.StartupPath + "//comments.txt";
 
         public LastPostComment()
         {
@@ -29,19 +31,28 @@ namespace vk_bot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            button2.Enabled = true;
+            if (listBox1.SelectedItems.Count > 0)
+            {
+                timer1.Enabled = true;
+                button2.Enabled = true;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(textBox1.Text);
-            textBox1.Text = "";
+            if (textBox1.Text.Length > 0 && textBox1.Text != " ")
+            {
+                listBox1.Items.Add(textBox1.Text);
+                textBox1.Text = "";
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Remove(listBox1.SelectedItems[0]);
+            if (listBox1.SelectedItems.Count > 0)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItems[0]);
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,12 +153,27 @@ namespace vk_bot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
+            if (timer1.Enabled = true)
+            {
+                timer1.Enabled = false;
+            }
         }
 
         private void LastPostComment_Load(object sender, EventArgs e)
         {
-            
+            listBox1.Items.Clear();
+            using (StreamReader sr = new StreamReader(path, Encoding.GetEncoding(1251)))
+            {
+                while (!sr.EndOfStream)
+                {
+                    listBox1.Items.Add(sr.ReadLine());
+                }
+            }
+        }
+
+        private void LastPostComment_FormClosing(object sender, FormClosingEventArgs e)
+        {           
+            File.WriteAllLines(path, listBox1.Items.OfType<string>(), Encoding.GetEncoding(1251));
         }
     }
 }
