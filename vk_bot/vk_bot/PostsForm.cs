@@ -29,8 +29,8 @@ namespace vk_bot
             WebClient client = new WebClient();
             string answer2 = Encoding.UTF8.GetString(client.DownloadData(request2));
 
-            Post po;
-            po = JsonConvert.DeserializeObject<Post>(answer2);
+            PostR po;
+            po = JsonConvert.DeserializeObject<PostR>(answer2);
 
             try
             {

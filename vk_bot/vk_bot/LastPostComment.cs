@@ -66,8 +66,8 @@ namespace vk_bot
                 Application.DoEvents();
                 System.Threading.Thread.Sleep(30);//Ждать 100 мс
 
-                Post po = new Post();
-                po = JsonConvert.DeserializeObject<Post>(answer);
+                PostR po;
+                po = JsonConvert.DeserializeObject<PostR>(answer);
 
                 if (answer.Contains("error"))
                 {
