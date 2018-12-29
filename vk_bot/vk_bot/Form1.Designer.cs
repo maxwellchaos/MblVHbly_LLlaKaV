@@ -33,11 +33,13 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
-            this.AutoMessageButton = new System.Windows.Forms.Button();
+            this.Pusia = new System.Windows.Forms.Button();
             this.sendphoto = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.AButto = new System.Windows.Forms.Button();
+            this.delete_friends = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,15 +92,15 @@
             this.autoAnswerButton.UseVisualStyleBackColor = true;
             this.autoAnswerButton.Click += new System.EventHandler(this.autoAnswerButton_Click);
             // 
-            // AutoMessageButton
+            // Pusia
             // 
-            this.AutoMessageButton.Location = new System.Drawing.Point(252, 100);
-            this.AutoMessageButton.Name = "AutoMessageButton";
-            this.AutoMessageButton.Size = new System.Drawing.Size(187, 54);
-            this.AutoMessageButton.TabIndex = 5;
-            this.AutoMessageButton.Text = "Автоответ на сообщения";
-            this.AutoMessageButton.UseVisualStyleBackColor = true;
-            this.AutoMessageButton.Click += new System.EventHandler(this.AutoMessageButton_Click);
+            this.Pusia.Location = new System.Drawing.Point(252, 100);
+            this.Pusia.Name = "Pusia";
+            this.Pusia.Size = new System.Drawing.Size(187, 54);
+            this.Pusia.TabIndex = 5;
+            this.Pusia.Text = "Автоответ на сообщения";
+            this.Pusia.UseVisualStyleBackColor = true;
+            this.Pusia.Click += new System.EventHandler(this.AutoMessageButton_Click);
             // 
             // sendphoto
             // 
@@ -140,6 +142,27 @@
             this.label2.Size = new System.Drawing.Size(0, 31);
             this.label2.TabIndex = 9;
             // 
+            // AButto
+            // 
+            this.AButto.Location = new System.Drawing.Point(465, 16);
+            this.AButto.Name = "AButto";
+            this.AButto.Size = new System.Drawing.Size(187, 54);
+            this.AButto.TabIndex = 6;
+            this.AButto.Text = "лайк первогопоста в группе";
+            this.AButto.UseVisualStyleBackColor = true;
+            this.AButto.Click += new System.EventHandler(this.AButton_Click);
+            // 
+            // delete_friends
+            // 
+            this.delete_friends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete_friends.Location = new System.Drawing.Point(465, 99);
+            this.delete_friends.Name = "delete_friends";
+            this.delete_friends.Size = new System.Drawing.Size(187, 54);
+            this.delete_friends.TabIndex = 6;
+            this.delete_friends.Text = "Удаление друзей";
+            this.delete_friends.UseVisualStyleBackColor = true;
+            this.delete_friends.Click += new System.EventHandler(this.delete_friends_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +172,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.sendphoto);
-            this.Controls.Add(this.AutoMessageButton);
+            this.Controls.Add(this.AButto);
+            this.Controls.Add(this.delete_friends);
+            this.Controls.Add(this.Pusia);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
             this.Controls.Add(this.FirstNameLabel);
@@ -171,11 +196,15 @@
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label SecondNameLabel;
         private System.Windows.Forms.Button autoAnswerButton;
-        private System.Windows.Forms.Button AutoMessageButton;
+        private System.Windows.Forms.Button Pusia;
+
         private System.Windows.Forms.Button sendphoto;
         public System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button AButto;
+        private System.Windows.Forms.Button delete_friends;
+
     }
 }
 

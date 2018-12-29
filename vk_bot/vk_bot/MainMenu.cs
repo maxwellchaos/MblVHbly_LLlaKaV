@@ -16,6 +16,7 @@ namespace vk_bot
     {
         string access_token;
         public string userId;
+
         public MainMenu()
         {
             InitializeComponent();
@@ -58,9 +59,12 @@ namespace vk_bot
 
         private void autoAnswerButton_Click(object sender, EventArgs e)
         {
+            progressBar1.Visible = true;
+
             AutoAnswerForm frm = new AutoAnswerForm();
             frm.access_token = access_token;
             frm.userId = userId;
+            frm.mainform = this;
             frm.Show();
         }
 

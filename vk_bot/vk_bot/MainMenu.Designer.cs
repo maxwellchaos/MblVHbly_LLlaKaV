@@ -34,6 +34,7 @@
             this.autoAnswerButton = new System.Windows.Forms.Button();
             this.AutoMessageButton = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,25 +95,34 @@
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.BackColor = System.Drawing.Color.Transparent;
             this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ErrorLabel.Location = new System.Drawing.Point(194, 299);
+            this.ErrorLabel.Location = new System.Drawing.Point(534, 271);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(74, 31);
             this.ErrorLabel.TabIndex = 6;
             this.ErrorLabel.Text = "Error";
             this.ErrorLabel.Visible = false;
             // 
-            // Form1
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 385);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(781, 23);
+            this.progressBar1.TabIndex = 7;
+            this.progressBar1.Visible = false;
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.AutoMessageButton);
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AvatarPictureBox);
             this.Controls.Add(this.webBrowser1);
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.Text = "VK Bot";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).EndInit();
@@ -129,6 +139,7 @@
         private System.Windows.Forms.Button autoAnswerButton;
         private System.Windows.Forms.Button AutoMessageButton;
         private System.Windows.Forms.Label ErrorLabel;
+        public System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

@@ -14,14 +14,16 @@ namespace vk_bot
 {
     public partial class Form1 : Form
     {
-        string access_token;
+
         public static string idd;
+        public static string access_token;
+        public string userId;
+
+
         public Form1()
         {
             InitializeComponent();
         }
-
-        
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -50,6 +52,7 @@ namespace vk_bot
                         //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
                         WebClient client = new WebClient();
                         //string answer = client.DownloadString(request);
+                        
                         string answer = Encoding.UTF8.GetString(client.DownloadData(request));
                     
                     
@@ -72,8 +75,6 @@ namespace vk_bot
                     {
                         label2.Text = "Возникла ошибка !";
                     }
-
-
                 }
             }
         }
@@ -86,17 +87,25 @@ namespace vk_bot
         private void autoAnswerButton_Click(object sender, EventArgs e)
         {
             AutoAnswerForm frm = new AutoAnswerForm();
+            frm.access_token = access_token;
+            frm.userId = userId;
+            frm.mainform = this;
             frm.Show();
         }
 
         private void AutoMessageButton_Click(object sender, EventArgs e)
         {
-            AutoMessageForm amfrm = new AutoMessageForm();
+            Pusia amfrm = new Pusia();
+            amfrm.access_token = access_token;
             amfrm.ShowDialog();
         }
 
+
+
         private void sendphoto_Click(object sender, EventArgs e)
         {
+            
+
             try
             {
                 label1.Visible = true;
@@ -110,7 +119,24 @@ namespace vk_bot
             {
                 label2.Text = "Возникла ошибка !";
             }
-           
+        }
+
+        private void AButton_Click(object sender, EventArgs e)
+        {
+            AButton frm = new AButton();
+            frm.access_token = access_token;
+            frm.ShowDialog();
+        }
+
+
+
+        private void delete_friends_Click(object sender, EventArgs e)
+        {
+            delete_friend dlf = new delete_friend();
+            dlf.access_token = access_token;
+            dlf.ShowDialog();
+
         }
     }
 }
+
