@@ -76,6 +76,8 @@ namespace vk_bot
         private void button2_Click(object sender, EventArgs e)
         {
             Post pos = new Post();
+            pos.group_id = listView1.SelectedItems[0].SubItems[1].Text; ;
+
             pos.ShowDialog();
             
 

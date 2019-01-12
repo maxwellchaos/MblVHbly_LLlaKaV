@@ -58,16 +58,5 @@ namespace vk_bot.Properties {
                 this["timevr"] = value;
             }
         }
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string textid {
-            get {
-                return ((string)(this["textid"]));
-            }
-            set {
-                this["textid"] = value;
-            }
-        }
     }
 }

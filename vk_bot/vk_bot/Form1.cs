@@ -104,8 +104,6 @@ namespace vk_bot
 
         private void sendphoto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Для начала введи в специальное поле ID получателя цифрами. Далее выбери любую группа из списка и выбери кол-во фото. Осталось нажать на кнопку 'Прислать' ", "Ознакомление",MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             try
             {
                 label1.Visible = true;

@@ -144,11 +144,12 @@
             // 
             // AButto
             // 
+            this.AButto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AButto.Location = new System.Drawing.Point(465, 16);
             this.AButto.Name = "AButto";
             this.AButto.Size = new System.Drawing.Size(187, 54);
             this.AButto.TabIndex = 6;
-            this.AButto.Text = "лайк первогопоста в группе";
+            this.AButto.Text = "лайк постов";
             this.AButto.UseVisualStyleBackColor = true;
             this.AButto.Click += new System.EventHandler(this.AButton_Click);
             // 

@@ -156,24 +156,24 @@ C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bo
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
 C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe.config
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AButton.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentErrorForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.delete_friend.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComment.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Post.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.PostsForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Pusia.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.sendphotoForm.resources
-C:\Users\Yaskevich\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe.config
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.exe
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.pdb
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.exe
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\vk_bot.pdb
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csprojResolveAssemblyReference.cache
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AButton.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoAnswerForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.AutoMessageForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentErrorForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.CommentForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.delete_friend.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Form1.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.LastPostComment.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Post.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.PostsForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Properties.Resources.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.Pusia.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.sendphotoForm.resources
+C:\Users\qqq\Desktop\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Debug\vk_bot.csproj.GenerateResource.Cache
