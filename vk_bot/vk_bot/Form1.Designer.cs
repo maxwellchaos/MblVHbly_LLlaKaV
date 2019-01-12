@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.AButto = new System.Windows.Forms.Button();
             this.delete_friends = new System.Windows.Forms.Button();
+            this.Likebutton = new System.Windows.Forms.Button();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,11 +166,24 @@
             this.delete_friends.UseVisualStyleBackColor = true;
             this.delete_friends.Click += new System.EventHandler(this.delete_friends_Click);
             // 
+            // Likebutton
+            // 
+            this.Likebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Likebutton.Location = new System.Drawing.Point(465, 179);
+            this.Likebutton.Name = "Likebutton";
+            this.Likebutton.Size = new System.Drawing.Size(187, 53);
+            this.Likebutton.TabIndex = 10;
+            this.Likebutton.Text = "Лайканье постов на стене";
+            this.ToolTip.SetToolTip(this.Likebutton, "Мой ДС: _HaKerHD93_#2979");
+            this.Likebutton.UseVisualStyleBackColor = true;
+            this.Likebutton.Click += new System.EventHandler(this.Likebutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 420);
+            this.Controls.Add(this.Likebutton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
@@ -204,6 +220,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AButto;
         private System.Windows.Forms.Button delete_friends;
+        private System.Windows.Forms.Button Likebutton;
+        private System.Windows.Forms.ToolTip ToolTip;
 
     }
 }
