@@ -50,6 +50,7 @@ namespace vk_bot
                 catch (Exception)
                 {
                     EvilLabel.Text = "Возникла ошибка!";
+
                 }
                 
             }

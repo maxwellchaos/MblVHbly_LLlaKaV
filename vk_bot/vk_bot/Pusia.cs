@@ -154,9 +154,16 @@ namespace vk_bot
                 }
                 catch (Exception)
                 {
+                    ErrorLabel.Visible = true;
                     ErrorLabel.Text = "Возникла ошибка!";
+                    
                 }
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
