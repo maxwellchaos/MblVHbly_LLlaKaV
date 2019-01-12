@@ -27,7 +27,7 @@ namespace vk_bot
 
         private void sendphotoForm_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = Properties.Settings.Default.textid;
             WebClient client = new WebClient();
 
 
@@ -127,6 +127,9 @@ namespace vk_bot
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label4.Visible = true;
+            timer1.Enabled = true;
+
         
             WebClient client = new WebClient();
 
@@ -154,7 +157,7 @@ namespace vk_bot
                                 if (stenka.response.items[id1].attachments[0].photo != null)
                                 {
                                     
-                                    string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.idd + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
+                                    string otpravka = "https://api.vk.com/method/messages.send?user_id=" + textBox1.Text + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
                                     string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
                                     Message message = JsonConvert.DeserializeObject<Message>(mess);
                                     System.Threading.Thread.Sleep(700);
@@ -165,5 +168,18 @@ namespace vk_bot
             }
     }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+            timer1.Enabled = false;
+        }
+
+        private void sendphotoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.textid = textBox1.Text;
+            Properties.Settings.Default.Save();
+        }
+
     }
+    
 }
