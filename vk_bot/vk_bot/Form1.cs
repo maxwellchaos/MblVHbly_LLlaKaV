@@ -108,6 +108,10 @@ namespace vk_bot
             {
                 label1.Visible = true;
                 progressBar1.Visible = true;
+                if (progressBar1.Value == 100)
+                {
+                    pictureBox1.Visible = true;
+                }
                 sendphotoForm spf = new sendphotoForm();
                 spf.parentForm = this;
                 spf.access_token = access_token;

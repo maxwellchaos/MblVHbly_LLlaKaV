@@ -98,6 +98,12 @@
     <Compile Include="LastPostComment.Designer.cs">
       <DependentUpon>LastPostComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="LikeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LikeForm.Designer.cs">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Post.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="LastPostComment.resx">
       <DependentUpon>LastPostComment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LikeForm.resx">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Pusia.resx">
       <DependentUpon>Pusia.cs</DependentUpon>
@@ -181,6 +191,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\SobrietyFire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\nostarboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\plusSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\minusSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\crossSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\checkSmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
