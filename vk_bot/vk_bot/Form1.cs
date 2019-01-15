@@ -18,7 +18,7 @@ namespace vk_bot
         public static string idd;
         public static string access_token;
         public string userId;
-
+        public string userIdd;
 
         public Form1()
         {
@@ -55,8 +55,9 @@ namespace vk_bot
                         
                         string answer = Encoding.UTF8.GetString(client.DownloadData(request));
                     
-                    
-                    
+                        
+
+                        
 
                         User user = JsonConvert.DeserializeObject<User>(answer);
                         string allgroups = "https://api.vk.com/method/groups.get?user_id=" + idd + "&fields=name&extended=1&access_token=" + access_token + "&v=5.87";
@@ -70,6 +71,8 @@ namespace vk_bot
                         AvatarPictureBox.Load(user.response[0].photo_100);
                         FirstNameLabel.Text = user.response[0].first_name;
                         SecondNameLabel.Text = user.response[0].last_name;
+
+                        userIdd = user.response[0].id.ToString();
                     }
                     catch (Exception)
                     {
@@ -122,7 +125,8 @@ namespace vk_bot
         private void AButton_Click(object sender, EventArgs e)
         {
             AButton frm = new AButton();
-            frm.access_token = access_token;
+            frm.access_token = access_token;           
+            frm.userIdd = userIdd;
             frm.ShowDialog();
         }
 
