@@ -53,12 +53,13 @@
             // 
             // list
             // 
-            this.list.Location = new System.Drawing.Point(621, 358);
+            this.list.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list.Location = new System.Drawing.Point(23, 218);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(182, 113);
+            this.list.Size = new System.Drawing.Size(270, 160);
             this.list.TabIndex = 0;
             this.list.UseCompatibleStateImageBehavior = false;
-            this.list.Visible = false;
+            this.list.View = System.Windows.Forms.View.Tile;
             // 
             // qwerty
             // 
@@ -72,7 +73,7 @@
             // 
             this.btclick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btclick.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btclick.Location = new System.Drawing.Point(407, 128);
+            this.btclick.Location = new System.Drawing.Point(419, 96);
             this.btclick.Name = "btclick";
             this.btclick.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btclick.Size = new System.Drawing.Size(179, 97);
@@ -122,7 +123,7 @@
             this.sclab.BackColor = System.Drawing.Color.White;
             this.sclab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sclab.ForeColor = System.Drawing.Color.Red;
-            this.sclab.Location = new System.Drawing.Point(142, 311);
+            this.sclab.Location = new System.Drawing.Point(490, 235);
             this.sclab.Name = "sclab";
             this.sclab.Size = new System.Drawing.Size(149, 25);
             this.sclab.TabIndex = 7;
@@ -152,9 +153,9 @@
             // picrelax
             // 
             this.picrelax.Image = global::vk_bot.Properties.Resources.море;
-            this.picrelax.Location = new System.Drawing.Point(190, 254);
+            this.picrelax.Location = new System.Drawing.Point(-200, -400);
             this.picrelax.Name = "picrelax";
-            this.picrelax.Size = new System.Drawing.Size(639, 336);
+            this.picrelax.Size = new System.Drawing.Size(732, 401);
             this.picrelax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picrelax.TabIndex = 11;
             this.picrelax.TabStop = false;
@@ -163,7 +164,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(473, 347);
+            this.checkBox1.Location = new System.Drawing.Point(485, 396);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 17);
             this.checkBox1.TabIndex = 12;
@@ -174,7 +175,7 @@
             // but
             // 
             this.but.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but.Location = new System.Drawing.Point(6, 373);
+            this.but.Location = new System.Drawing.Point(709, 412);
             this.but.Name = "but";
             this.but.Size = new System.Drawing.Size(10, 10);
             this.but.TabIndex = 13;
@@ -223,11 +224,10 @@
             // 
             this.dfg.AutoSize = true;
             this.dfg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dfg.Location = new System.Drawing.Point(22, 368);
+            this.dfg.Location = new System.Drawing.Point(34, 358);
             this.dfg.Name = "dfg";
-            this.dfg.Size = new System.Drawing.Size(293, 40);
+            this.dfg.Size = new System.Drawing.Size(0, 20);
             this.dfg.TabIndex = 9;
-            this.dfg.Text = "введите время,в которое \r\nвам будет приходить статистика";
             this.dfg.Visible = false;
             this.dfg.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -245,7 +245,7 @@
             // 
             this.sos.AutoSize = true;
             this.sos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sos.Location = new System.Drawing.Point(34, 316);
+            this.sos.Location = new System.Drawing.Point(368, 239);
             this.sos.Name = "sos";
             this.sos.Size = new System.Drawing.Size(102, 20);
             this.sos.TabIndex = 15;
@@ -256,7 +256,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(635, 376);
+            this.ClientSize = new System.Drawing.Size(731, 434);
             this.Controls.Add(this.picrelax);
             this.Controls.Add(this.sos);
             this.Controls.Add(this.ert);

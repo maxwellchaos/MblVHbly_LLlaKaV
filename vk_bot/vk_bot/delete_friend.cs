@@ -17,11 +17,14 @@ namespace vk_bot
         double timestamp;
         int datr;
         int qwr;
+        int a = 0;
         int tm = 0;
         int gh = 0;
         int sch = 0;
+        int fr = 0;
         string mes;
         int asd = 0;
+        string listmes;
         int num;
         bool rep = false;
         int q;
@@ -45,7 +48,46 @@ namespace vk_bot
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            a++;
+            if (a == 10)
+            {
+                a = 1;
+            }
+                
+                switch(a)
+                {
+                    case 1:
+                        btclick.BackColor = Color.Blue;
+                        break;
+                    case 2:
+                        btclick.BackColor = Color.Gold;
+                        break;
+                    case 3:
+                        btclick.BackColor = Color.LemonChiffon;
+                        break;
 
+                    case 4:
+                        btclick.BackColor = Color.Olive;
+                        break;
+                    case 5:
+                        btclick.BackColor = Color.PaleGreen;
+                        break;
+                    case 6:
+                        btclick.BackColor = Color.Pink;
+                        break;
+                    case 7:
+                        btclick.BackColor = Color.SeaGreen;
+                        break;
+                    case 8:
+                        btclick.BackColor = Color.Silver;
+                        break;
+                    case 9:
+                        btclick.BackColor = Color.Snow;
+                        break;
+                }
+
+            
+            
                 try
                 {
                     if (timebox.Text == "часы")
@@ -85,6 +127,9 @@ namespace vk_bot
                     sclab.Visible = true;
                     q = datr;
                     time1.Enabled = true;
+                    btclick.Cursor = Cursors.No;
+                    btclick.Text = "Wait";
+                    btclick.Enabled = false;
                 }
                 gh = 0;
             }
@@ -120,6 +165,7 @@ namespace vk_bot
                 countmes = user.response.count;
             }
             mes = "";
+            listmes = "";
             int remem = 0;
             for (int itemsind = 0; itemsind <countmes; itemsind++)
             {
@@ -150,8 +196,8 @@ namespace vk_bot
                             }
                             if (user.response.profiles[fri].friend_status.ToString() == "3")
                             {
-                                ListViewItem lm1 = new ListViewItem("     " + user.response.items[itemsind].last_message.text.ToString() + "                \n   ");
-                                list.Items.Add(lm1);
+                               // ListViewItem lm1 = new ListViewItem("     " + user.response.items[itemsind].last_message.text.ToString() + "                \n   ");
+                                //list.Items.Add(lm1);
                                 Int64 dat = user.response.items[itemsind].last_message.date;
                                 long epoch = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
                                 Int64 itog = epoch - dat;
@@ -160,12 +206,25 @@ namespace vk_bot
                                 {
                                     sch++;
                                     mes = mes + sch + ")@id" + user.response.items[itemsind].last_message.peer_id.ToString() + " ";
+                                    for (int i = 0; i < 300; i++)
+                                    {
+                                        if (user.response.items[itemsind].last_message.peer_id == user.response.profiles[i].id)
+                                        {
+                                            fr = i;
+                                            break;
+                                        }
+                                    }
+                                    listmes ="\n"+ listmes  + user.response.profiles[fr].first_name+"  "+user.response.profiles[fr].last_name+ "\n\n ";
+                                    ListViewItem lm1 = new ListViewItem(listmes);
+                                    list.Items.Add(lm1);
+                                    listmes = "";
                                 }
                             }
                         }
                     }
                 }
             }
+            fr = 0;
             if (sch == 0)
             {
                 mes = "Малоактивных пользователей нет!";
@@ -193,8 +252,9 @@ namespace vk_bot
             int ids = id.Next(1000, 100000);
             if (sch > 0)
             {
-                string reqest6 = "https://api.vk.com/method/messages.send?user_id=" + idbox.Text + "&random_id=" + ids + "&peer_id=" + idbox.Text + "&message= каких людей удалить? Напишите букву 'у',\n затем без пробелов номера людей, которых надо удалить \n " + mes + "&payload=500&dont_parse_links=1&access_token=" + access_token + "&v=5.87";
+                string reqest6 = "https://api.vk.com/method/messages.send?user_id=" + idbox.Text + "&random_id=" + ids + "&peer_id=" + idbox.Text + "&message= каких людей удалить? Напишите букву 'у',\n затем без пробелов номера людей, которых надо удалить, \nесли таковых нет то напишите 'нет' \n " + mes + "&payload=500&dont_parse_links=1&access_token=" + access_token + "&v=5.87";
                 string answer6 = Encoding.UTF8.GetString(client51.DownloadData(reqest6));
+                 
                 try
                 {
                     if (answer6.Contains("error"))
@@ -211,6 +271,11 @@ namespace vk_bot
             {
                 string reqest6 = "https://api.vk.com/method/messages.send?user_id=" + idbox.Text + "&random_id=" + ids + "&peer_id=" + idbox.Text + "&message=" + mes + "&payload=500&dont_parse_links=1&access_token=" + access_token + "&v=5.87";
                 string answer6 = Encoding.UTF8.GetString(client51.DownloadData(reqest6));
+                remem = 0;
+                sch = 0;
+                btclick.Enabled = true;
+                btclick.Text = "применить";
+                time1.Enabled = false;
                 try
                 {
                     if (answer6.Contains("error"))
@@ -262,6 +327,19 @@ namespace vk_bot
                         msg = msg + ms[sc];
                     }
                 }
+                else if ((user.response.items[itemsind].last_message.peer_id.ToString() == idbox.Text) && (user.response.items[itemsind].last_message.text[0].ToString() == "н"))
+                {
+                    msg = ""; mes2 = ""; mes = "";
+                    sch = 0;
+                    Random id = new Random();                                                                                                                //////id_bota//////
+                    int ids = id.Next(1000, 100000);
+                    string reqest6 = "https://api.vk.com/method/messages.send?user_id=" + idbox.Text + "&random_id=" + ids + "&peer_id=" + idbox.Text + "&message= Хорошо! Обращайтесь!&payload=500&dont_parse_links=1&access_token=" + access_token + "&v=5.87";
+                    string answer6 = Encoding.UTF8.GetString(client5.DownloadData(reqest6));
+                    btclick.Enabled = true;
+                    btclick.Text = "применить";
+                    btclick.Cursor = Cursors.Default;
+                    time2.Enabled = false;
+                }
                 if ((user.response.items[itemsind].last_message.peer_id.ToString() == idbox.Text) && (user.response.items[itemsind].last_message.text[0].ToString() == "у"))
                 {
                     for (int i = 0; i < msg.Length; i++)
@@ -296,6 +374,7 @@ namespace vk_bot
                     string answer6 = Encoding.UTF8.GetString(client5.DownloadData(reqest6));
                     msg = ""; mes2 = ""; mes = "";
                     sch = 0;
+                    btclick.Enabled = true;
                     time2.Enabled = false;
                 }
             
