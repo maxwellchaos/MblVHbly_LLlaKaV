@@ -67,6 +67,9 @@ namespace vk_bot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            textBox25.Text ="Оставь открытым это окно, и бот будет отвечать всем, кто пишет тебе, автоматом. Как только ты закроешь окно, бот перестанет отвечать."+
+   " Ты можешь изменить окна с ответами или оставить их по умолчанию.";
+            listBox1.Items.Clear();
             //timer1.Enabled = false;
             string request = "https://api.vk.com/method/messages.getConversations?filter=unread&access_token=" + access_token + "&v=5.87";
             WebClient stepagavno = new WebClient();
@@ -154,9 +157,17 @@ namespace vk_bot
                 }
                 catch (Exception)
                 {
+
+                    ErrorLabel.Visible = true;
                     ErrorLabel.Text = "Возникла ошибка!";
+                    
                 }
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -28,57 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
+            this.EvilLabel = new System.Windows.Forms.Label();
             this.Pusia = new System.Windows.Forms.Button();
             this.sendphoto = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LoadLabel = new System.Windows.Forms.Label();
             this.AButto = new System.Windows.Forms.Button();
             this.delete_friends = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.Likebutton = new System.Windows.Forms.Button();
+            this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // AvatarPictureBox
+            // webBrowser1
             // 
-            this.AvatarPictureBox.Location = new System.Drawing.Point(38, 128);
-            this.AvatarPictureBox.Name = "AvatarPictureBox";
-            this.AvatarPictureBox.Size = new System.Drawing.Size(150, 140);
-            this.AvatarPictureBox.TabIndex = 1;
-            this.AvatarPictureBox.TabStop = false;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(822, 421);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410346&display=page&redirect_uri=https:" +
+                    "//oauth.vk.com/blank.html&scope=friends,wall,messages,photos&response_type=token" +
+                    "&v=5.87&state=123456", System.UriKind.Absolute);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(71, 9);
+            this.FirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FirstNameLabel.Location = new System.Drawing.Point(108, 215);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.FirstNameLabel.Size = new System.Drawing.Size(34, 16);
             this.FirstNameLabel.TabIndex = 2;
-            this.FirstNameLabel.Text = "label1";
+            this.FirstNameLabel.Text = "нет";
             // 
             // SecondNameLabel
             // 
             this.SecondNameLabel.AutoSize = true;
-            this.SecondNameLabel.Location = new System.Drawing.Point(71, 69);
+            this.SecondNameLabel.Location = new System.Drawing.Point(108, 179);
             this.SecondNameLabel.Name = "SecondNameLabel";
-            this.SecondNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.SecondNameLabel.Size = new System.Drawing.Size(24, 13);
             this.SecondNameLabel.TabIndex = 3;
-            this.SecondNameLabel.Text = "label2";
+            this.SecondNameLabel.Text = "нет";
             // 
             // autoAnswerButton
             // 
-            this.autoAnswerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoAnswerButton.Location = new System.Drawing.Point(252, 17);
             this.autoAnswerButton.Name = "autoAnswerButton";
-            this.autoAnswerButton.Size = new System.Drawing.Size(187, 53);
+            this.autoAnswerButton.Size = new System.Drawing.Size(187, 58);
             this.autoAnswerButton.TabIndex = 4;
-            this.autoAnswerButton.Text = "Автокомментирование постов в группах";
+            this.autoAnswerButton.Text = "Автокомментирование новых постов в группах";
+            this.ToolTip1.SetToolTip(this.autoAnswerButton, "Сканирует выбранные вами группы и автоматически комментирует их");
             this.autoAnswerButton.UseVisualStyleBackColor = true;
             this.autoAnswerButton.Click += new System.EventHandler(this.autoAnswerButton_Click);
+            // 
+            // EvilLabel
+            // 
+            this.EvilLabel.AutoSize = true;
+            this.EvilLabel.Location = new System.Drawing.Point(541, 331);
+            this.EvilLabel.Name = "EvilLabel";
+            this.EvilLabel.Size = new System.Drawing.Size(35, 13);
+            this.EvilLabel.TabIndex = 7;
+            this.EvilLabel.Text = "label1";
+            this.EvilLabel.Visible = false;
             // 
             // Pusia
             // 
@@ -110,25 +129,15 @@
             this.progressBar1.TabIndex = 7;
             this.progressBar1.Visible = false;
             // 
-            // label1
+            // LoadLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 351);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Загружаем ваши группы";
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(472, 202);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 31);
-            this.label2.TabIndex = 9;
+            this.LoadLabel.AutoSize = true;
+            this.LoadLabel.Location = new System.Drawing.Point(45, 351);
+            this.LoadLabel.Name = "LoadLabel";
+            this.LoadLabel.Size = new System.Drawing.Size(132, 13);
+            this.LoadLabel.TabIndex = 8;
+            this.LoadLabel.Text = "Загружаем ваши группы";
+            this.LoadLabel.Visible = false;
             // 
             // AButto
             // 
@@ -136,7 +145,7 @@
             this.AButto.Name = "AButto";
             this.AButto.Size = new System.Drawing.Size(187, 54);
             this.AButto.TabIndex = 6;
-            this.AButto.Text = "лайк первогопоста в группе";
+            this.AButto.Text = "лайк постов";
             this.AButto.UseVisualStyleBackColor = true;
             this.AButto.Click += new System.EventHandler(this.AButton_Click);
             // 
@@ -151,26 +160,34 @@
             this.delete_friends.UseVisualStyleBackColor = true;
             this.delete_friends.Click += new System.EventHandler(this.delete_friends_Click);
             // 
-            // webBrowser1
+            // Likebutton
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(822, 420);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410346&display=page&redirect_uri=https:" +
-                    "//oauth.vk.com/blank.html&scope=friends,wall,messages&response_type=token&v=5.87" +
-                    "&state=123456", System.UriKind.Absolute);
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.Likebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Likebutton.Location = new System.Drawing.Point(465, 178);
+            this.Likebutton.Name = "Likebutton";
+            this.Likebutton.Size = new System.Drawing.Size(187, 53);
+            this.Likebutton.TabIndex = 10;
+            this.Likebutton.Text = "Лайканье постов на стене";
+            this.ToolTip1.SetToolTip(this.Likebutton, "Мой ДС: _HaKerHD93_#2979");
+            this.Likebutton.UseVisualStyleBackColor = true;
+            this.Likebutton.Click += new System.EventHandler(this.Likebutton_Click);
+            // 
+            // AvatarPictureBox
+            // 
+            this.AvatarPictureBox.Location = new System.Drawing.Point(12, 4);
+            this.AvatarPictureBox.Name = "AvatarPictureBox";
+            this.AvatarPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.AvatarPictureBox.TabIndex = 1;
+            this.AvatarPictureBox.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 420);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(822, 421);
+            this.Controls.Add(this.EvilLabel);
+            this.Controls.Add(this.Likebutton);
+            this.Controls.Add(this.LoadLabel);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.sendphoto);
             this.Controls.Add(this.AButto);
@@ -183,7 +200,8 @@
             this.Controls.Add(this.webBrowser1);
             this.MinimumSize = new System.Drawing.Size(678, 459);
             this.Name = "Form1";
-            this.Text = "Меню";
+            this.ShowIcon = false;
+            this.Text = "Мыльный Бот";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -201,12 +219,13 @@
 
         private System.Windows.Forms.Button sendphoto;
         public System.Windows.Forms.ProgressBar progressBar1;
-        public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label LoadLabel;
         private System.Windows.Forms.Button AButto;
         private System.Windows.Forms.Button delete_friends;
+        private System.Windows.Forms.Button Likebutton;
+        private System.Windows.Forms.ToolTip ToolTip1;
         private System.Windows.Forms.WebBrowser webBrowser1;
-
+        private System.Windows.Forms.Label EvilLabel;
     }
 }
 

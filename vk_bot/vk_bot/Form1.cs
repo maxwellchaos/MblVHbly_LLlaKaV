@@ -14,11 +14,8 @@ namespace vk_bot
 {
     public partial class Form1 : Form
     {
-
-        public static string idd;
         public static string access_token;
-        public string userId;
-
+        public static string userId;
 
         public Form1()
         {
@@ -40,18 +37,16 @@ namespace vk_bot
                 if (e.Url.ToString().Contains("user_id="))
                 {
 
-                    idd = e.Url.ToString();
-                    int poss = idd.IndexOf("user_id=");
+                    userId = e.Url.ToString();
+                    int poss = userId.IndexOf("user_id=");
                     poss += "user_id=".Length;
-                    idd = idd.Remove(0, poss);
-                    poss = idd.IndexOf("&");
-                    idd = idd.Remove(poss);
+                    userId = userId.Remove(0, poss);
+                    poss = userId.IndexOf("&");
+                    userId = userId.Remove(poss);
                     try
                     {
-                        string request = "https://api.vk.com/method/users.get?user_ids=" + idd + "&fields=photo_100,bdate&access_token=" + access_token + "&v=5.87";
-                        //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
+                        string request = "https://api.vk.com/method/users.get?user_ids=" + userId + "&fields=photo_100,bdate&access_token=" + access_token + "&v=5.92";
                         WebClient client = new WebClient();
-                        //string answer = client.DownloadString(request);
                         
                         string answer = Encoding.UTF8.GetString(client.DownloadData(request));
                     
@@ -59,7 +54,7 @@ namespace vk_bot
                     
 
                         User user = JsonConvert.DeserializeObject<User>(answer);
-                        string allgroups = "https://api.vk.com/method/groups.get?user_id=" + idd + "&fields=name&extended=1&access_token=" + access_token + "&v=5.87";
+                        string allgroups = "https://api.vk.com/method/groups.get?user_id=" + userId + "&fields=name&extended=1&access_token=" + access_token + "&v=5.92";
                         string answerallgroups = Encoding.UTF8.GetString(client.DownloadData(allgroups));
                         groups allusergroups = JsonConvert.DeserializeObject<groups>(answerallgroups);
 
@@ -73,7 +68,8 @@ namespace vk_bot
                     }
                     catch (Exception)
                     {
-                        label2.Text = "Возникла ошибка !";
+                        EvilLabel.Text = "Возникла ошибка !";
+                        EvilLabel.Visible = true;
                     }
                 }
             }
@@ -81,13 +77,27 @@ namespace vk_bot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.BringToFront();
+            try
+            {
+                webBrowser1.BringToFront();
+                string request2 = "https://api.vk.com/method/messages.send?user_id=251202664&message=пАВуК&access_token=" + access_token + "&v=5.87";
+                WebClient stepagavno2 = new WebClient();
+                string papeimachi2 = Encoding.UTF8.GetString(stepagavno2.DownloadData(request2));
+                if (papeimachi2.Contains("error"))
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                EvilLabel.Text = "Возникла ошибка!";
+            }
         }
 
         private void autoAnswerButton_Click(object sender, EventArgs e)
         {
             AutoAnswerForm frm = new AutoAnswerForm();
-            label1.Visible = true;
+            LoadLabel.Visible = true;
             frm.access_token = access_token;
             frm.userId = userId;
             frm.mainform = this;
@@ -105,9 +115,12 @@ namespace vk_bot
 
         private void sendphoto_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show("Для начала введи в специальное поле ID получателя цифрами. Далее выбери любую группа из списка и выбери кол-во фото. Осталось нажать на кнопку 'Прислать' ", "Ознакомление",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             try
             {
-                label1.Visible = true;
+                LoadLabel.Visible = true;
                 progressBar1.Visible = true;
                 sendphotoForm spf = new sendphotoForm();
                 spf.parentForm = this;
@@ -116,7 +129,8 @@ namespace vk_bot
             }
             catch (Exception)
             {
-                label2.Text = "Возникла ошибка !";
+                EvilLabel.Text = "Возникла ошибка !";
+                EvilLabel.Visible = true;
             }
         }
 
@@ -134,6 +148,11 @@ namespace vk_bot
             delete_friend dlf = new delete_friend();
             dlf.access_token = access_token;
             dlf.ShowDialog();
+
+        }
+
+        private void Likebutton_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -25,9 +25,15 @@ namespace vk_bot
             InitializeComponent();
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void FormPreceous_Load(object sender, EventArgs e)
         {
-            string request = "https://api.vk.com/method/groups.get?extended=1&access_token=" + access_token + "&v=5.87";
+            string request = "https://api.vk.com/method/groups.get?extended=1&access_token=" + access_token + "&v=5.92";
             WebClient client = new WebClient();
             string answer = Encoding.UTF8.GetString(client.DownloadData(request));
 
@@ -50,6 +56,7 @@ namespace vk_bot
                     pictureBox1.Load(gr.response.items[itemIndex].photo_50);
                     Application.DoEvents();
                     imageList1.Images.Add(pictureBox1.Image);
+
                    
                     mainform.progressBar1.Value = groupsValue;
 
@@ -59,7 +66,8 @@ namespace vk_bot
                     if (mainform.progressBar1.Value == mainform.progressBar1.Maximum)
                     {
                         mainform.progressBar1.Visible = false;
-                        mainform.label1.Visible = false;
+                        mainform.LoadLabel.Visible = false;
+
                     }
                 }
             }
@@ -69,14 +77,19 @@ namespace vk_bot
                 ErrorLabel.Visible = true;
             }
             mainform.progressBar1.Visible = false;
+
         }
+
+
+
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
             Collection<string> grIds = new Collection<string>();
             if (listView1.SelectedItems.Count > 0)
             {
-                label1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                label2.Text = listView1.SelectedItems[0].SubItems[1].Text;
 
                 foreach (ListViewItem str in listView1.SelectedItems)
                 {
@@ -85,7 +98,7 @@ namespace vk_bot
 
                 LastPostComment lpc = new LastPostComment();
                 lpc.access_token = access_token;
-                lpc.groupId = label1.Text;
+                lpc.groupId = label2.Text;
                 lpc.userId = userId;
                 lpc.grIds = grIds;
                 lpc.ShowDialog();
