@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
+
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
@@ -41,8 +43,7 @@
             this.AButto = new System.Windows.Forms.Button();
             this.delete_friends = new System.Windows.Forms.Button();
             this.Likebutton = new System.Windows.Forms.Button();
-            this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.AvatarPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,7 +169,6 @@
             this.Likebutton.Size = new System.Drawing.Size(187, 53);
             this.Likebutton.TabIndex = 10;
             this.Likebutton.Text = "Лайканье постов на стене";
-            this.ToolTip1.SetToolTip(this.Likebutton, "Мой ДС: _HaKerHD93_#2979");
             this.Likebutton.UseVisualStyleBackColor = true;
             this.Likebutton.Click += new System.EventHandler(this.Likebutton_Click);
             // 
@@ -226,6 +226,7 @@
         private System.Windows.Forms.ToolTip ToolTip1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label EvilLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
