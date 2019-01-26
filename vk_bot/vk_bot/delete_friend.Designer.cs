@@ -153,7 +153,7 @@
             // picrelax
             // 
             this.picrelax.Image = global::vk_bot.Properties.Resources.море;
-            this.picrelax.Location = new System.Drawing.Point(-200, -400);
+            this.picrelax.Location = new System.Drawing.Point(-2, -4);
             this.picrelax.Name = "picrelax";
             this.picrelax.Size = new System.Drawing.Size(732, 401);
             this.picrelax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

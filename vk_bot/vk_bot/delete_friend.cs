@@ -53,87 +53,86 @@ namespace vk_bot
             {
                 a = 1;
             }
-                
-                switch(a)
-                {
-                    case 1:
-                        btclick.BackColor = Color.Blue;
-                        break;
-                    case 2:
-                        btclick.BackColor = Color.Gold;
-                        break;
-                    case 3:
-                        btclick.BackColor = Color.LemonChiffon;
-                        break;
 
-                    case 4:
-                        btclick.BackColor = Color.Olive;
-                        break;
-                    case 5:
-                        btclick.BackColor = Color.PaleGreen;
-                        break;
-                    case 6:
-                        btclick.BackColor = Color.Pink;
-                        break;
-                    case 7:
-                        btclick.BackColor = Color.SeaGreen;
-                        break;
-                    case 8:
-                        btclick.BackColor = Color.Silver;
-                        break;
-                    case 9:
-                        btclick.BackColor = Color.Snow;
-                        break;
+            switch (a)
+            {
+                case 1:
+                    btclick.BackColor = Color.Blue;
+                    break;
+                case 2:
+                    btclick.BackColor = Color.Gold;
+                    break;
+                case 3:
+                    btclick.BackColor = Color.LemonChiffon;
+                    break;
+
+                case 4:
+                    btclick.BackColor = Color.Olive;
+                    break;
+                case 5:
+                    btclick.BackColor = Color.PaleGreen;
+                    break;
+                case 6:
+                    btclick.BackColor = Color.Pink;
+                    break;
+                case 7:
+                    btclick.BackColor = Color.SeaGreen;
+                    break;
+                case 8:
+                    btclick.BackColor = Color.Silver;
+                    break;
+                case 9:
+                    btclick.BackColor = Color.Snow;
+                    break;
+            }
+
+
+
+            try
+            {
+                if (timebox.Text == "часы")
+                {
+                    string qwerty = ttbox.Text;
+                    datr = Convert.ToInt32(qwerty);
+                    datr = datr * 60 * 60;
                 }
-
-            
-            
-                try
-                {
-                    if (timebox.Text == "часы")
+                else
+                    if (timebox.Text == "секунды")
                     {
                         string qwerty = ttbox.Text;
+
                         datr = Convert.ToInt32(qwerty);
-                        datr = datr * 60 * 60;
                     }
                     else
-                        if (timebox.Text == "секунды")
+                        if (timebox.Text == "дни")
                         {
                             string qwerty = ttbox.Text;
-
                             datr = Convert.ToInt32(qwerty);
+                            datr = datr * 60 * 60 * 24;
                         }
-                        else
-                            if (timebox.Text == "дни")
-                            {
-                                string qwerty = ttbox.Text;
-                                datr = Convert.ToInt32(qwerty);
-                                datr = datr * 60 * 60 * 24;
-                            }
-                   
-                   
-                }
-                catch
-                {
-                    sclab.Visible = true;
-                    sclab.Text = "ERROR!";
-                    gh++;
-                }
 
-                if (gh == 0)
-                {
-                    time2.Enabled = false;
-                    sclab.Text = "successfully!";
-                    sclab.Visible = true;
-                    q = datr;
-                    time1.Enabled = true;
-                    btclick.Cursor = Cursors.No;
-                    btclick.Text = "Wait";
-                    btclick.Enabled = false;
-                }
-                gh = 0;
+
             }
-        
+            catch
+            {
+                sclab.Visible = true;
+                sclab.Text = "ERROR!";
+                gh++;
+            }
+
+            if (gh == 0)
+            {
+                time2.Enabled = false;
+                sclab.Text = "successfully!";
+                sclab.Visible = true;
+                q = datr;
+                time1.Enabled = true;
+                btclick.Text = "Wait";
+                btclick.Enabled = false;
+            }
+            gh = 0;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -143,7 +142,7 @@ namespace vk_bot
             RootObject user;
             user = JsonConvert.DeserializeObject<RootObject>(answer5);
 
-           
+
             try
             {
                 if (answer5.Contains("error"))
@@ -167,12 +166,12 @@ namespace vk_bot
             mes = "";
             listmes = "";
             int remem = 0;
-            for (int itemsind = 0; itemsind <countmes; itemsind++)
+            for (int itemsind = 0; itemsind < countmes; itemsind++)
             {
                 if (user.response.items[itemsind].conversation.peer.type == "user")
                 { }
                 else
-                { remem++;  }
+                { remem++; }
 
             }
             int fri = 0;
@@ -196,7 +195,7 @@ namespace vk_bot
                             }
                             if (user.response.profiles[fri].friend_status.ToString() == "3")
                             {
-                               // ListViewItem lm1 = new ListViewItem("     " + user.response.items[itemsind].last_message.text.ToString() + "                \n   ");
+                                // ListViewItem lm1 = new ListViewItem("     " + user.response.items[itemsind].last_message.text.ToString() + "                \n   ");
                                 //list.Items.Add(lm1);
                                 Int64 dat = user.response.items[itemsind].last_message.date;
                                 long epoch = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
@@ -214,7 +213,7 @@ namespace vk_bot
                                             break;
                                         }
                                     }
-                                    listmes ="\n"+ listmes  + user.response.profiles[fr].first_name+"  "+user.response.profiles[fr].last_name+ "\n\n ";
+                                    listmes = "\n" + listmes + user.response.profiles[fr].first_name + "  " + user.response.profiles[fr].last_name + "\n\n ";
                                     ListViewItem lm1 = new ListViewItem(listmes);
                                     list.Items.Add(lm1);
                                     listmes = "";
@@ -231,7 +230,7 @@ namespace vk_bot
             }
             remem = 0;
             //}
-           // sch = 0;
+            // sch = 0;
             string reqest51 = "https://api.vk.com/method/messages.getConversations?extended=1&fields=id,first_name,friend_status,&access_token=" + access_token + "&v=5.87";
             WebClient client51 = new WebClient();
             string answer51 = Encoding.UTF8.GetString(client51.DownloadData(reqest51));
@@ -254,7 +253,7 @@ namespace vk_bot
             {
                 string reqest6 = "https://api.vk.com/method/messages.send?user_id=" + idbox.Text + "&random_id=" + ids + "&peer_id=" + idbox.Text + "&message= каких людей удалить? Напишите букву 'у',\n затем без пробелов номера людей, которых надо удалить, \nесли таковых нет то напишите 'нет' \n " + mes + "&payload=500&dont_parse_links=1&access_token=" + access_token + "&v=5.87";
                 string answer6 = Encoding.UTF8.GetString(client51.DownloadData(reqest6));
-                 
+
                 try
                 {
                     if (answer6.Contains("error"))
@@ -289,8 +288,8 @@ namespace vk_bot
                 }
             }
             sch = 0;
-           
-            
+
+
             time2.Enabled = true;
             time1.Enabled = false;
         }
@@ -299,7 +298,7 @@ namespace vk_bot
             string reqest5 = "https://api.vk.com/method/messages.getConversations?extended=1&fields=id,first_name,freind_status&access_token=" + access_token + "&v=5.87";
             WebClient client5 = new WebClient();
             string answer5 = Encoding.UTF8.GetString(client5.DownloadData(reqest5));
-          
+
             RootObject user;
             user = JsonConvert.DeserializeObject<RootObject>(answer5);
             try
@@ -315,7 +314,7 @@ namespace vk_bot
             }
             //if (qwr == 0)
             string msg = ""; string mes2 = mes; // people delete
-            
+
             for (int itemsind = 0; itemsind < 20; itemsind++)
             {
                 if ((user.response.items[itemsind].last_message.peer_id.ToString() == idbox.Text) && (user.response.items[itemsind].last_message.text[0].ToString() == "у"))
@@ -377,10 +376,10 @@ namespace vk_bot
                     btclick.Enabled = true;
                     time2.Enabled = false;
                 }
-            
+
             }
-           
-           // timer2.Enabled = false;
+
+            // timer2.Enabled = false;
         }
         private void delete_friend_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -395,19 +394,19 @@ namespace vk_bot
         {
             try
             {
-               
+
                 DateTime time = new DateTime();
                 string tm = boxt.Text;
                 string tm2 = boxt.Text;
                 int pos = tm.IndexOf(":");
-                    tm = tm.Remove(pos);
-                MessageBox.Show("ежедневно в "+tm2+" вам\nбудет присылаться статистика","сообщение!");
+                tm = tm.Remove(pos);
+                MessageBox.Show("ежедневно в " + tm2 + " вам\nбудет присылаться статистика", "сообщение!");
                 if (time.Hour.ToString() == tm)
                 {
-                    
+
                     time1.Enabled = true;
                     time3.Enabled = false;
-                   
+
                 }
             }
             catch
@@ -443,11 +442,11 @@ namespace vk_bot
 
         private void ttbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-char number = e.KeyChar;
-if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-{
-    e.Handled = true;
-}
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
