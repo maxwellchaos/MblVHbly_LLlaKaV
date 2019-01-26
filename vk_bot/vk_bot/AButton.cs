@@ -36,7 +36,7 @@ namespace vk_bot
                 names[0] = gr.response.items[itemIndex].name;
                 names[1] = gr.response.items[itemIndex].id.ToString();
                 names[2] = gr.response.items[itemIndex].photo_100;
-                names[3] = @"https://vk.com/"+gr.response.items[itemIndex].screen_name; 
+                names[3] = @"https://vk.com/"+gr.response.items[itemIndex].screen_name;
                 pictureBox1.Load(gr.response.items[itemIndex].photo_100);
                 Application.DoEvents();
                 imageList1.Images.Add(pictureBox1.Image);
@@ -50,6 +50,7 @@ namespace vk_bot
         {
             if (listView1.SelectedItems.Count > 0)
             {
+
                 label1.Text = listView1.SelectedItems[0].SubItems[1].Text;
                 label3.Text = listView1.SelectedItems[0].SubItems[2].Text;
                 linkLabel1.Text = listView1.SelectedItems[0].SubItems[3].Text;
@@ -77,6 +78,8 @@ namespace vk_bot
         private void button2_Click(object sender, EventArgs e)
         {
             Post pos = new Post();
+            pos.group_id = listView1.SelectedItems[0].SubItems[1].Text; ;
+
             pos.ShowDialog();
             
 
