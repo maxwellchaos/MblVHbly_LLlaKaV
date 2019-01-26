@@ -29,11 +29,13 @@ namespace vk_bot
         {
 
             textBox1.Text = Properties.Settings.Default.textid;
+
+
             WebClient client = new WebClient();
 
 
 
-            string request2 = "https://api.vk.com/method/groups.get?user_id=" + Form1.userId + "&fields=name,photo_100&extended=1&access_token=" + access_token + "&v=5.87";
+            string request2 = "https://api.vk.com/method/groups.get?user_id=" + Form1.idd + "&fields=name,photo_100&extended=1&access_token=" + access_token + "&v=5.87";
             string answer = Encoding.UTF8.GetString(client.DownloadData(request2));
             pictureBox1.Visible = false;
             listView1.Clear();
@@ -54,6 +56,7 @@ namespace vk_bot
                 {
                     string[] names = new string[3];
 
+
                     valuegroups = valuegroups + 1;
 
                     names[0] = allusergroups.response.items[itemIndex].name;
@@ -72,7 +75,7 @@ namespace vk_bot
                     {
 
                         parentForm.progressBar1.Visible = false;
-                        parentForm.LoadLabel.Visible = false;
+                        parentForm.label1.Visible = false;
 
                     }
                 }
@@ -96,15 +99,28 @@ namespace vk_bot
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                label6.Visible = true;
+                return;
+            }
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                label6.Visible = false;
+                
+            }
+         
 
             label4.Visible = true;
             timer1.Enabled = true;
+
 
             WebClient client = new WebClient();
 
             int countphoto = (int)numericUpDown1.Value;
             listView1.Select();
-            
+
             for (; countphoto > 0; )
             {
 
@@ -112,41 +128,56 @@ namespace vk_bot
                 for (int index = 0; index < listView1.SelectedItems.Count; index = index + 1)
                 {
                     Random photorandom = new Random();
+
                     int id1 = photorandom.Next(20);
+                    Form1.index = id1;
                     string stena = "https://api.vk.com/method/wall.get?owner_id=-" + allusergroups.response.items[listView1.SelectedIndices[0]].id + "&fields=attachments&access_token=" + access_token + "&v=5.87";
 
                     string wall = Encoding.UTF8.GetString(client.DownloadData(stena));
                     Wall stenka = JsonConvert.DeserializeObject<Wall>(wall);
-                    int id = stenka.response.items[id1].attachments[0].photo.id;
-                    int ownerid = stenka.response.items[id1].attachments[0].photo.owner_id;
-                    if (countphoto > stenka.response.items[id1].attachments[0].photo.owner_id)
+
+                     
                     if (stenka.response.items != null)
                         if (stenka.response.items[id1].attachments != null)
+                        {
                             if (stenka.response.items[id1].attachments[0] != null)
                                 if (stenka.response.items[id1].attachments[0].photo != null)
                                 {
-                                    string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.userId + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
-                                    string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
-                                    Message message = JsonConvert.DeserializeObject<Message>(mess);
-                                    System.Threading.Thread.Sleep(700);
-                                    countphoto = countphoto - 1;
-                                }
+                                    if (countphoto > stenka.response.items[id1].attachments[0].photo.owner_id)
+                                    {
+                                        int id = stenka.response.items[id1].attachments[0].photo.id;
+                                        int ownerid = stenka.response.items[id1].attachments[0].photo.owner_id;
 
+                                         if (textBox1.Text == "")
+            {
+                string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.idd + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
+                string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
+                Message message = JsonConvert.DeserializeObject<Message>(mess);
+                System.Threading.Thread.Sleep(700);
+                countphoto = countphoto - 1;
+            }
+                                        if (textBox1.Text != "")
+                                        {
+                                            string otpravka = "https://api.vk.com/method/messages.send?user_id=" + textBox1.Text + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
+                                            string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
+                                        Message message = JsonConvert.DeserializeObject<Message>(mess);
+                                        System.Threading.Thread.Sleep(700);
+                                        countphoto = countphoto - 1;
+                                        }
+                                        
+                                        
+                                    }
+
+                                }
+                        }
                 }
             }
-    }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             label4.Visible = false;
             timer1.Enabled = false;
         }
-
-        private void sendphotoForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.textid = textBox1.Text;
-            Properties.Settings.Default.Save();
-        }
-
     }
 }
