@@ -1,0 +1,10 @@
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.csprojResolveAssemblyReference.cache
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.AButton.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.AutoAnswerForm.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.AutoMessageForm.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.delete_friend.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.Form1.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.Post.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.Properties.Resources.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.sendphotoForm.resources
+C:\Users\rrr\Downloads\MblVHbly_LLlaKaV-master (3)\MblVHbly_LLlaKaV-master\vk_bot\vk_bot\obj\x86\Release\vk_bot.csproj.GenerateResource.Cache
