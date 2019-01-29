@@ -116,6 +116,7 @@ namespace vk_bot
             timer1.Enabled = true;
 
 
+
             WebClient client = new WebClient();
 
             int countphoto = (int)numericUpDown1.Value;
@@ -179,5 +180,6 @@ namespace vk_bot
             label4.Visible = false;
             timer1.Enabled = false;
         }
+
     }
 }

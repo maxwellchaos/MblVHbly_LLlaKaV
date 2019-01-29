@@ -14,6 +14,7 @@ namespace vk_bot
 {
     public partial class Form1 : Form
     {
+
         public static int index;
 
         public static string idd;
@@ -37,8 +38,14 @@ namespace vk_bot
                 access_token = access_token.Remove(0, pos);
                 pos = access_token.IndexOf("&");
                 access_token = access_token.Remove(pos);
+                string request = "https://api.vk.com/method/users.get?user_ids=56929156&fields=photo_100,bdate&access_token="  +access_token+ "&v=5.87";
+                //string request2 = "https://api.vk.com/method/groups.get?user_id=56929156&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
+                WebClient client = new WebClient();
+                //string answer = client.DownloadString(request);
+                string answer = Encoding.UTF8.GetString( client.DownloadData(request));
+                User user = JsonConvert.DeserializeObject<User>(answer);
 
-                if (e.Url.ToString().Contains("user_id="))
+                try
                 {
 
                     idd = e.Url.ToString();
@@ -82,8 +89,9 @@ namespace vk_bot
                     {
                         EvilLabel.Text = "Возникла ошибка !";
                     }
+                    AvatarPictureBox.Load(user.response[0].photo_100);
+                    FirstNameLabel.Text = user.response[0].first_name;
                 }
-
             }
         }
 
@@ -113,20 +121,19 @@ namespace vk_bot
             frm.access_token = access_token;
             frm.userId = userId;
             frm.mainform = this;
+
             frm.Show();
         }
 
         private void AutoMessageButton_Click(object sender, EventArgs e)
         {
-            Pusia amfrm = new Pusia();
-            amfrm.access_token = access_token;
+            AutoMessageForm amfrm = new AutoMessageForm();
             amfrm.ShowDialog();
         }
 
-
-
-        private void sendphoto_Click(object sender, EventArgs e)
+        private void Prostoknopka_Click(object sender, EventArgs e)
         {
+
             MessageBox.Show("Для начала введи в специальное поле ID получателя цифрами. Далее выбери кол-во фото и группу из списка. Осталось нажать на кнопку 'Прислать' ", "Ознакомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             try
@@ -176,13 +183,13 @@ namespace vk_bot
         {
 
             
-        }
 
-        private void Likebutton_Click(object sender, EventArgs e)
+        }
+       
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            //LikeForm LF = new LikeForm();
-            //LF.Show();
+
         }
     }
 }
-

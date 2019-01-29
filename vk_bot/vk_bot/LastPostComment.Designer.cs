@@ -302,7 +302,6 @@
             this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-
             // LastPostComment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,13 +309,10 @@
             this.ClientSize = new System.Drawing.Size(587, 417);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label2);
-
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(603, 453);
             this.Name = "LastPostComment";
-
             this.Text = "Комментирование";
-
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LastPostComment_FormClosing);
             this.Load += new System.EventHandler(this.LastPostComment_Load);
             this.panel1.ResumeLayout(false);

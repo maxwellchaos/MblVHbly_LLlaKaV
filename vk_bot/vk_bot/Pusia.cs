@@ -13,13 +13,13 @@ using Newtonsoft.Json;
 namespace vk_bot
 {
    
-    public partial class Pusia : Form
+    public partial class Pusia_ : Form
     {
         public string access_token;
         string id;
         string[] answer = new string[7];
         string[] answer2 = new string[8];
-        public Pusia()
+        public Pusia_()
         {
             answer[0] = "Слушаю музыку, а ты?";
             answer[1] = "Играю в Osu, а ты?";
@@ -37,11 +37,13 @@ namespace vk_bot
             answer2[6] = "Mal, et toi?";
             answer2[7] = "Ужасно прооостооо~";
             
+            
             InitializeComponent();
         }
 
         private void Pusia_Load(object sender, EventArgs e)
         {
+
             
             string request = "https://api.vk.com/method/messages.getConversations?filter=unread&access_token=" + access_token +"&v=5.87";
             WebClient stepagavno= new WebClient();
@@ -67,8 +69,6 @@ namespace vk_bot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            textBox25.Text ="Оставь открытым это окно, и бот будет отвечать всем, кто пишет тебе, автоматом. Как только ты закроешь окно, бот перестанет отвечать."+
-   " Ты можешь изменить окна с ответами или оставить их по умолчанию.";
             listBox1.Items.Clear();
             //timer1.Enabled = false;
             string request = "https://api.vk.com/method/messages.getConversations?filter=unread&access_token=" + access_token + "&v=5.87";
@@ -81,10 +81,17 @@ namespace vk_bot
                 try
                 {
 
+
                     if (itm.last_message.text.ToLower().Contains(textBox1.Text.ToLower()))
                     {
 
-                        string request2 = "https://api.vk.com/method/messages.send?user_id=" + itm.last_message.from_id + "&message=" + textBox3.Text + "&access_token=" + access_token + "&v=5.87";
+                        string name = "https://api.vk.com/method/users.get?user_id=" + itm.last_message.from_id + "&access_token=" + access_token + "&v=5.87";
+                        WebClient lc = new WebClient();
+                        string namesel = Encoding.UTF8.GetString(lc.DownloadData(name));
+                        Namee named = JsonConvert.DeserializeObject<Namee>(namesel);
+                        string text = textBox3.Text.Replace("@", named.response[0].first_name);
+                        string request2 = "https://api.vk.com/method/messages.send?user_id=" + itm.last_message.from_id + "&message=" + text
+ +"&access_token=" + access_token + "&v=5.87";
                         WebClient cl = new WebClient();
                         string mess = Encoding.UTF8.GetString(cl.DownloadData(request2));
                         if (mess.Contains("error"))
@@ -95,7 +102,7 @@ namespace vk_bot
                     if (itm.last_message.text.ToLower().Contains(textBox2.Text.ToLower()))
                     {
                         Random ccc = new Random();
-                        string request2 = "https://api.vk.com/method/messages.send?user_id=" + itm.last_message.from_id + "&message=" + answer2[ccc.Next(8)] + "&access_token=" + access_token + "&v=5.87";
+                        string request2 = "https://api.vk.com/method/messages.send?user_id=" + itm.last_message.from_id + "&message=" + answer2[ccc.Next(9)] + "&access_token=" + access_token + "&v=5.87";
                         WebClient cl = new WebClient();
                         string mess = Encoding.UTF8.GetString(cl.DownloadData(request2));
                         if (mess.Contains("error"))
@@ -103,6 +110,7 @@ namespace vk_bot
                             throw new Exception();
                         }
                     }
+
                     if (itm.last_message.text.ToLower().Contains(textBox5.Text.ToLower()))
                     {
                         string request2 = "https://api.vk.com/method/messages.send?user_id=" + itm.last_message.from_id + "&message=" + textBox6.Text + "&access_token=" + access_token + "&v=5.87";
@@ -146,6 +154,8 @@ namespace vk_bot
                             throw new Exception();
                         }
 
+
+
                     }
 
                     listBox1.Items.Add(itm.last_message.text);
@@ -157,17 +167,36 @@ namespace vk_bot
                 }
                 catch (Exception)
                 {
-
                     ErrorLabel.Visible = true;
                     ErrorLabel.Text = "Возникла ошибка!";
                     
                 }
             }
         }
+        public class Response
+        {
+            public int id { get; set; }
+            public string first_name { get; set; }
+            public string last_name { get; set; }
+        }
 
+        public class Namee
+        {
+            public List<Response> response { get; set; }
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBox28_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

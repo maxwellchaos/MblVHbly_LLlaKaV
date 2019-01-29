@@ -231,11 +231,6 @@ namespace vk_bot
         }
     }
 
-
-   
-
-
-
     class User
     {
         public Response[] response;
@@ -679,7 +674,3 @@ namespace vk_bot
     }
 
 }
-
-
-
-

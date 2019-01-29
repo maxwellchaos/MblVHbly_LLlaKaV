@@ -49,13 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AButton.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AButton.Designer.cs">
-      <DependentUpon>AButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="answer.cs" />
     <Compile Include="AutoAnswerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,12 +60,6 @@
     </Compile>
     <Compile Include="AutoMessageForm.Designer.cs">
       <DependentUpon>AutoMessageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delete_friend.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delete_friend.Designer.cs">
-      <DependentUpon>delete_friend.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -101,16 +88,11 @@
     <Compile Include="Pusia.Designer.cs">
       <DependentUpon>Pusia.cs</DependentUpon>
     </Compile>
-    <Compile Include="sendphotoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sendphotoForm.Designer.cs">
-      <DependentUpon>sendphotoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="xxxx.cs" />
     <EmbeddedResource Include="AutoAnswerForm.resx">
       <DependentUpon>AutoAnswerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,7 +126,6 @@
     <EmbeddedResource Include="sendphotoForm.resx">
       <DependentUpon>sendphotoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

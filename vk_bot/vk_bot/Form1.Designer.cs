@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.SecondNameLabel = new System.Windows.Forms.Label();
             this.autoAnswerButton = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.Prostoknopka = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.EvilLabel = new System.Windows.Forms.Label();
+
             this.Pusia = new System.Windows.Forms.Button();
             this.sendphoto = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -62,10 +64,18 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(822, 420);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410346&display=page&redirect_uri=https:" +
-                    "//oauth.vk.com/blank.html&scope=friends,wall,messages,photos&response_type=token" +
-                    "&v=5.87&state=123456", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://oauth.vk.com/authorize?client_id=6410347&display=page&redirect_uri=https:" +
+                    "//oauth.vk.com/blank.html&scope=messages&response_type=token&v=5.87&state=123456" +
+                    "", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            // 
+            // AvatarPictureBox
+            // 
+            this.AvatarPictureBox.Location = new System.Drawing.Point(38, 128);
+            this.AvatarPictureBox.Name = "AvatarPictureBox";
+            this.AvatarPictureBox.Size = new System.Drawing.Size(150, 140);
+            this.AvatarPictureBox.TabIndex = 1;
+            this.AvatarPictureBox.TabStop = false;
             // 
             // FirstNameLabel
             // 
@@ -92,7 +102,7 @@
             this.autoAnswerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoAnswerButton.Location = new System.Drawing.Point(233, 12);
             this.autoAnswerButton.Name = "autoAnswerButton";
-            this.autoAnswerButton.Size = new System.Drawing.Size(187, 58);
+            this.autoAnswerButton.Size = new System.Drawing.Size(187, 53);
             this.autoAnswerButton.TabIndex = 4;
             this.autoAnswerButton.Text = "Автокомментирование новых постов в группах";
             this.autoAnswerButton.UseVisualStyleBackColor = true;
@@ -273,15 +283,14 @@
             this.Controls.Add(this.AButto);
             this.Controls.Add(this.delete_friends);
             this.Controls.Add(this.Pusia);
+
             this.Controls.Add(this.autoAnswerButton);
             this.Controls.Add(this.SecondNameLabel);
             this.Controls.Add(this.FirstNameLabel);
             this.Controls.Add(this.AvatarPictureBox);
             this.Controls.Add(this.webBrowser1);
-            this.MinimumSize = new System.Drawing.Size(678, 459);
             this.Name = "Form1";
-            this.ShowIcon = false;
-            this.Text = "Мыльный Бот";
+            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPictureBox)).EndInit();
@@ -292,6 +301,7 @@
 
         #endregion
 
+        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.PictureBox AvatarPictureBox;
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label SecondNameLabel;
@@ -312,8 +322,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-
-
         private System.Windows.Forms.Button AutoMessageButton;
         private System.Windows.Forms.Button Prostoknopka;
         private System.Windows.Forms.Timer timer1;

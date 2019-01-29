@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listView1 = new System.Windows.Forms.ListView();
-
             this.Пост = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,28 +38,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-
             this.Пост,
-
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.Location = new System.Drawing.Point(0, -1);
             this.listView1.Name = "listView1";
-
             this.listView1.Size = new System.Drawing.Size(531, 417);
-
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-
             // Пост
             // 
             this.Пост.Text = "Пост";
@@ -73,7 +66,6 @@
             // 
             // columnHeader3
             // 
-
             this.columnHeader3.Text = "Id поста";
             this.columnHeader3.Width = 307;
             // 
@@ -87,7 +79,6 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(570, 310);
-
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 64);
             this.button1.TabIndex = 3;
@@ -95,7 +86,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -125,18 +115,15 @@
             this.label2.Text = "ты уже лайкнул этот пост";
             this.label2.Visible = false;
             // 
-
             // Post
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 441);
-
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-
             this.Controls.Add(this.listView1);
             this.Name = "Post";
             this.Text = "Post";
@@ -156,6 +143,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-
     }
 }
