@@ -68,6 +68,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 37);
             this.label1.TabIndex = 9;
+            this.label1.Visible = false;
             // 
             // button1
             // 
@@ -88,6 +89,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 37);
             this.label3.TabIndex = 12;
+            this.label3.Visible = false;
             // 
             // linkLabel1
             // 
@@ -102,7 +104,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(448, 277);
+            this.pictureBox1.Location = new System.Drawing.Point(503, 304);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 112);
             this.pictureBox1.TabIndex = 15;
@@ -111,12 +113,14 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(594, 266);
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(491, 188);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(166, 75);
             this.button2.TabIndex = 16;
             this.button2.Text = "посты";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

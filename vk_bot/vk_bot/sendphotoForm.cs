@@ -35,7 +35,7 @@ namespace vk_bot
 
 
 
-            string request2 = "https://api.vk.com/method/groups.get?user_id=" + Form1.idd + "&fields=name,photo_100&extended=1&access_token=" + access_token + "&v=5.87";
+            string request2 = "https://api.vk.com/method/groups.get?user_id=" + Form1.userId + "&fields=name,photo_100&extended=1&access_token=" + access_token + "&v=5.87";
             string answer = Encoding.UTF8.GetString(client.DownloadData(request2));
             pictureBox1.Visible = false;
             listView1.Clear();
@@ -75,7 +75,7 @@ namespace vk_bot
                     {
 
                         parentForm.progressBar1.Visible = false;
-                        parentForm.label1.Visible = false;
+                        parentForm.LoadLabel.Visible = false;
 
                     }
                 }
@@ -116,7 +116,6 @@ namespace vk_bot
             timer1.Enabled = true;
 
 
-
             WebClient client = new WebClient();
 
             int countphoto = (int)numericUpDown1.Value;
@@ -151,7 +150,7 @@ namespace vk_bot
 
                                          if (textBox1.Text == "")
             {
-                string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.idd + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
+                string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.userId + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
                 string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
                 Message message = JsonConvert.DeserializeObject<Message>(mess);
                 System.Threading.Thread.Sleep(700);
@@ -180,6 +179,5 @@ namespace vk_bot
             label4.Visible = false;
             timer1.Enabled = false;
         }
-
     }
 }

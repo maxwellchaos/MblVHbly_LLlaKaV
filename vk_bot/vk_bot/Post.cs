@@ -22,32 +22,32 @@ namespace vk_bot
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                string request10 = "https://api.vk.com/method/likes.isLiked?type=post&owner_id=-"+group_id+"&item_id=" + listView1.SelectedItems[0].SubItems[2].Text + "&access_token=" + Form1.access_token + "&v=5.92";
-                WebClient wb1 = new WebClient();
-                string answer9 = Encoding.UTF8.GetString(wb1.DownloadData(request10));
-                isLiked allusergroups = JsonConvert.DeserializeObject<isLiked>(answer9);
-                if (allusergroups.response.liked == 1)
-                {
-                    label2.Visible = true;
-                }
-                else
-                {
-                    string request9 = "https://api.vk.com/method/likes.add?type=post&owner_id=" +
-                        listView1.SelectedItems[0].SubItems[1].Text + "&item_id=" +
-                        listView1.SelectedItems[0].SubItems[2].Text + "&access_token=" + Form1.access_token + "&v=5.92";
-                    WebClient client1 = new WebClient();
-                    string answer8 = Encoding.UTF8.GetString(client1.DownloadData(request9));
-                    label2.Visible = false;
-                    label1.Visible = true;
-                }
+            //if (listView1.SelectedItems.Count > 0)
+            //{
+            //    string request10 = "https://api.vk.com/method/likes.isLiked?type=post&owner_id=-"+group_id+"&item_id=" + listView1.SelectedItems[0].SubItems[2].Text + "&access_token=" + Form1.access_token + "&v=5.92";
+            //    WebClient wb1 = new WebClient();
+            //    string answer9 = Encoding.UTF8.GetString(wb1.DownloadData(request10));
+            //    isLiked allusergroups = JsonConvert.DeserializeObject<isLiked>(answer9);
+            //    if (allusergroups.response.liked == 1)
+            //    {
+            //        label2.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        string request9 = "https://api.vk.com/method/likes.add?type=post&owner_id=" +
+            //            listView1.SelectedItems[0].SubItems[1].Text + "&item_id=" +
+            //            listView1.SelectedItems[0].SubItems[2].Text + "&access_token=" + Form1.access_token + "&v=5.92";
+            //        WebClient client1 = new WebClient();
+            //        string answer8 = Encoding.UTF8.GetString(client1.DownloadData(request9));
+            //        label2.Visible = false;
+            //        label1.Visible = true;
+            //    }
 
-                if (label2.Visible == true)
-                {
-                    label1.Visible = false;
-                }
-            }
+            //    if (label2.Visible == true)
+            //    {
+            //        label1.Visible = false;
+            //    }
+            //}
         }
 
         private void Post_Load(object sender, EventArgs e)
@@ -100,6 +100,37 @@ namespace vk_bot
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            progressBar1.Value = 0;
+            foreach (ListViewItem lvi in listView1.Items)
+            {
+
+                string request9 = "https://api.vk.com/method/likes.add?type=post&owner_id=" + lvi.SubItems[1].Text + "&item_id=" + lvi.SubItems[2].Text + "&access_token=" + Form1.access_token + "&v=5.92";
+                WebClient client1 = new WebClient();
+                string answer123 = Encoding.UTF8.GetString(client1.DownloadData(request9));
+
+                label4.Text = answer123;
+                Application.DoEvents();
+                
+                Random ranb = new Random();
+                int rand = ranb.Next(1000,1000);
+                System.Threading.Thread.Sleep(rand);
+
+                progressBar1.Value = progressBar1.Value +1;
+
+            }
+
+            
+            if (progressBar1.Value == 20)
+            {
+                progressBar1.Visible = false;
+                label5.Visible = true;
+            }
+            label4.Visible = false;
+            
         }
     }
 }

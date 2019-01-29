@@ -17,6 +17,7 @@ namespace vk_bot
         {
             InitializeComponent();
         }
+        string id;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -31,7 +32,7 @@ namespace vk_bot
             {
                 label6.Visible = true;
                 label7.Visible = true;
-                label7.Text = "Не возможно поставить лайк на пост! Проверьте id или id поста! id поста самое последние в строке (3 цифры)";
+                label7.Text = "Невозможно поставить лайк на пост! Проверьте id или id поста! id поста самое последние в строке (3 цифры)";
             }
         }
 
@@ -39,19 +40,36 @@ namespace vk_bot
         {
             try
             {
-                label5.Text = Form1.idd;
+                WebClient client = new WebClient();
+                string request00 = "https://api.vk.com/method/friends.get?order=hints&offset=5&fields=photo_50&access_token=" + Form1.access_token + "&v=5.92";
+                string answer = Encoding.UTF8.GetString(client.DownloadData(request00));
+                Friends Friend = JsonConvert.DeserializeObject<Friends>(answer);
+                for (int itemIndex = 0; itemIndex < Friend.response.count; itemIndex++)
+                {
+                    comboBox1.Items.Add(Friend.response.items[itemIndex].first_name + " " + Friend.response.items[itemIndex].last_name + " " + "id:" + " " + Friend.response.items[itemIndex].id);
+                }
+            }
+            catch
+            {
+                label6.Visible = true;
+                label7.Visible = true;
+                label7.Text = "Невозможно вывести запрос! Повторите попытку позже!";
+            }
+            try
+            {
+                label5.Text = Form1.userId;
             }
             catch (Exception a)
             {
                 label6.Visible = true;
                 label7.Visible = true;
-                label7.Text = "Не возможно вывести id пользователя! Повторите попытку позже!";
+                label7.Text = "Невозможно вывести id пользователя! Повторите попытку позже!";
             }
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("" + Form1.idd + "");
+            Clipboard.SetText("" + Form1.userId + "");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -60,7 +78,10 @@ namespace vk_bot
             {
                 textBox1.Text = "";
                 textBox2.Text = "";
+                comboBox1.Text = "";
                 textBox3.Text = "";
+                label10.Text = "";
+                button1.Enabled = false;
             }
             catch
             {
@@ -73,17 +94,42 @@ namespace vk_bot
         private void button3_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Data.txt|*.txt";
+            saveFileDialog.Filter = "Data.txt";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-              
+                
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Contains("id: "))
+            {
+                id = comboBox1.Text;
+                int pos = id.IndexOf("id: ");
+                pos += "id: ".Length;
+                id = id.Remove(0, pos);
+                label10.Text = id;
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("" + label10.Text + "");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (textBox2.Text != "" &&  textBox1.Text != "")
+            {
+                button1.Enabled = true;
+            }
         }
     }
 }

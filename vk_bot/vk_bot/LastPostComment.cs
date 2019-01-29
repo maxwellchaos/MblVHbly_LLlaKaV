@@ -20,7 +20,9 @@ namespace vk_bot
         public string groupId;
         public string postId;
         public string userId;
+        public string photoId;
         public int postTime;
+        public int AlbumId;
         public Collection<string> grIds = new Collection<string>();
         string path = Application.StartupPath + "//comments.txt";
 
@@ -32,9 +34,36 @@ namespace vk_bot
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count > 0)
-            {               
+            {
                 timer1.Enabled = true;
                 button2.Enabled = true;
+
+                if (PicRelatedMin.Visible == true)
+                {
+                    string request = "https://api.vk.com/method/photos.getUploadServer?album_id=" + AlbumId + "&access_token=" + access_token + "&v=5.92";
+                    WebClient client = new WebClient();
+                    string answer = Encoding.UTF8.GetString(client.DownloadData(request));
+
+                    UploadServer us = new UploadServer();
+                    us = JsonConvert.DeserializeObject<UploadServer>(answer);
+
+                    string answer2 = Encoding.UTF8.GetString(client.UploadFile(us.response.upload_url, openFileDialog1.FileName));
+
+                    PostRequest pr = new PostRequest();
+                    pr = JsonConvert.DeserializeObject<PostRequest>(answer2);
+
+                    string server = pr.server.ToString();
+                    string PhotosList = pr.photos_list;
+                    string hash = pr.hash;
+
+                    string request2 = "https://api.vk.com/method/photos.save?album_id=" + AlbumId + "&server=" + server + "&photos_list=" + PhotosList + "&hash=" + hash + "&access_token=" + access_token + "&v=5.92";
+                    string answer3 = Encoding.UTF8.GetString(client.DownloadData(request2));
+
+                    Photos ph = new Photos();
+                    ph = JsonConvert.DeserializeObject<Photos>(answer3);
+
+                    photoId = ph.response[0].id.ToString();
+                }
 
                 DialogResult res;
                 res = MessageBox.Show("Автокомментирование новых постов успешно начато", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -73,7 +102,7 @@ namespace vk_bot
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.UtcNow;
-            
+
             foreach (string groupId in grIds)
             {
                 DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -82,9 +111,9 @@ namespace vk_bot
                 string answer = Encoding.UTF8.GetString(client.DownloadData(request));
                 System.Threading.Thread.Sleep(30);//Ждать 30 мс
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(30);//Ждать 100 мс
+                System.Threading.Thread.Sleep(30);//Ждать 30 мс
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(30);//Ждать 100 мс
+                System.Threading.Thread.Sleep(30);//Ждать 30 мс
 
                 PostR po;
                 po = JsonConvert.DeserializeObject<PostR>(answer);
@@ -132,11 +161,11 @@ namespace vk_bot
 
                 }
                 Application.DoEvents();
-                if (now < origin.AddMinutes(1) && fi == false)
+                if (now < origin.AddMinutes(2) && fi == false)
                 {
                     try
                     {
-                        if (PicRelatedMin.Visible = false)
+                        if (PicRelatedMin.Visible == false)
                         {
                             string request2 = "https://api.vk.com/method/wall.createComment?owner_id=-" + groupId + "&post_id=" + postId + "&message=" + listBox1.Text + "&access_token=" + access_token + "&v=5.92";
                             string answer2 = Encoding.UTF8.GetString(client.DownloadData(request2));
@@ -148,7 +177,7 @@ namespace vk_bot
                         }
                         else
                         {
-                            string request2 = "https://api.vk.com/method/wall.createComment?owner_id=-" + groupId + "&post_id=" + postId + "&message=" + listBox1.Text + "&access_token=" + access_token + "&v=5.92";
+                            string request2 = "https://api.vk.com/method/wall.createComment?owner_id=-" + groupId + "&post_id=" + postId + "&message=" + listBox1.Text + "&attachments=photo" + userId + "_" + photoId + "&access_token=" + access_token + "&v=5.92";
                             string answer2 = Encoding.UTF8.GetString(client.DownloadData(request2));
 
                             if (answer.Contains("error"))
@@ -167,9 +196,10 @@ namespace vk_bot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled == true)
+            if (timer1.Enabled)
             {
                 timer1.Enabled = false;
+                button2.Enabled = false;
 
                 DialogResult res;
                 res = MessageBox.Show("Автокомментирование новых постов успешно завершено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -189,7 +219,7 @@ namespace vk_bot
         }
 
         private void LastPostComment_FormClosing(object sender, FormClosingEventArgs e)
-        {           
+        {
             File.WriteAllLines(path, listBox1.Items.OfType<string>(), Encoding.GetEncoding(1251));
         }
 
@@ -206,9 +236,33 @@ namespace vk_bot
             button6.Visible = true;
             button6.Enabled = true;
 
-            string request = "https://api.vk.com/method/photos.createAlbum?title=vk_bot&privacy_view=nobody&access_token=" + access_token + "&v=5.92";
+            string request = "https://api.vk.com/method/photos.getAlbums?owner_id=" + userId + "&access_token=" + access_token + "&v=5.92";
             WebClient client = new WebClient();
             string answer = Encoding.UTF8.GetString(client.DownloadData(request));
+
+            Albums al = new Albums();
+            al = JsonConvert.DeserializeObject<Albums>(answer);
+
+            bool exist = false;
+            foreach (Albums.Response.Item itm in al.response.items)
+            {
+                if (itm.title == "vk_bot")
+                {
+                    AlbumId = itm.id;
+                    exist = true;
+                }
+            }
+
+            if (!exist)
+            {
+                string request2 = "https://api.vk.com/method/photos.createAlbum?title=vk_bot&privacy_view=nobody&access_token=" + access_token + "&v=5.92";
+                string answer2 = Encoding.UTF8.GetString(client.DownloadData(request2));
+
+                CreateAlbum cral = new CreateAlbum();
+                cral = JsonConvert.DeserializeObject<CreateAlbum>(answer2);
+
+                AlbumId = cral.response.id;
+            }
 
             openFileDialog1.Dispose();
         }
@@ -217,6 +271,8 @@ namespace vk_bot
         {
             PicRelatedLabel.Text = "Загрузите фотографию";
             PicRelatedMin.Visible = false;
+            button6.Visible = false;
+            button6.Enabled = false;
         }
     }
 }

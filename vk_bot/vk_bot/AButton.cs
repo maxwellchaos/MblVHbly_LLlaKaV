@@ -14,7 +14,6 @@ namespace vk_bot
     public partial class AButton : Form
     {
         public string access_token;
-        public string userIdd;
         public AButton()
         {
             InitializeComponent();
@@ -22,7 +21,7 @@ namespace vk_bot
 
         private void AButton_Load(object sender, EventArgs e)
         {
-            string request2 = "https://api.vk.com/method/groups.get?user_id=" + userIdd + "&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
+            string request2 = "https://api.vk.com/method/groups.get?user_id=" + Form1.userId + "&fields=photo_100&extended=1&access_token=" + access_token + "&v=5.87";
             WebClient client = new WebClient();
             string answer = Encoding.UTF8.GetString(client.DownloadData(request2));
 
