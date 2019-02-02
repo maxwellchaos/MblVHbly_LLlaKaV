@@ -41,12 +41,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label10 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -79,6 +79,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(226, 18);
+            this.textBox1.MaxLength = 4;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(117, 20);
             this.textBox1.TabIndex = 3;
@@ -183,6 +184,18 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Подсказка";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(289, 196);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 16);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Нет";
+            this.toolTip1.SetToolTip(this.label10, "ПМК что-бы скопировать");
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
             // button3
             // 
             this.button3.Enabled = false;
@@ -233,18 +246,6 @@
             this.comboBox1.TabIndex = 17;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(289, 196);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 16);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Нет";
-            this.toolTip1.SetToolTip(this.label10, "ПМК что-бы скопировать");
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -268,6 +269,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(95, 18);
+            this.textBox2.MaxLength = 9;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 20);
             this.textBox2.TabIndex = 21;

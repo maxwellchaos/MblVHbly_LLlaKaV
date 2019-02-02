@@ -28,9 +28,6 @@ namespace vk_bot
         private void sendphotoForm_Load(object sender, EventArgs e)
         {
 
-            textBox1.Text = Properties.Settings.Default.textid;
-
-
             WebClient client = new WebClient();
 
 
@@ -57,6 +54,15 @@ namespace vk_bot
                     string[] names = new string[3];
 
 
+                    
+
+
+
+
+
+
+
+
                     valuegroups = valuegroups + 1;
 
                     names[0] = allusergroups.response.items[itemIndex].name;
@@ -67,6 +73,13 @@ namespace vk_bot
                     imageList1.Images.Add(pictureBox1.Image);
                     parentForm.progressBar1.Maximum = allusergroups.response.items.Length;
                     parentForm.progressBar1.Value = valuegroups;
+
+
+
+
+
+
+
 
                     ListViewItem lvi = new ListViewItem(names, imageList1.Images.Count - 1);
                     listView1.Items.Add(lvi);
@@ -89,6 +102,21 @@ namespace vk_bot
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
@@ -99,29 +127,12 @@ namespace vk_bot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
-            {
-                label6.Visible = true;
-                return;
-            }
-
-            if (listView1.SelectedItems.Count > 0)
-            {
-                label6.Visible = false;
-                
-            }
-         
-
-            label4.Visible = true;
-            timer1.Enabled = true;
-
-
-
+        
             WebClient client = new WebClient();
 
             int countphoto = (int)numericUpDown1.Value;
             listView1.Select();
-
+            
             for (; countphoto > 0; )
             {
 
@@ -129,57 +140,30 @@ namespace vk_bot
                 for (int index = 0; index < listView1.SelectedItems.Count; index = index + 1)
                 {
                     Random photorandom = new Random();
-
                     int id1 = photorandom.Next(20);
-                    Form1.index = id1;
                     string stena = "https://api.vk.com/method/wall.get?owner_id=-" + allusergroups.response.items[listView1.SelectedIndices[0]].id + "&fields=attachments&access_token=" + access_token + "&v=5.87";
 
                     string wall = Encoding.UTF8.GetString(client.DownloadData(stena));
                     Wall stenka = JsonConvert.DeserializeObject<Wall>(wall);
-
-                     
+                    int id = stenka.response.items[id1].attachments[0].photo.id;
+                    int ownerid = stenka.response.items[id1].attachments[0].photo.owner_id;
+                    if (countphoto > stenka.response.items[id1].attachments[0].photo.owner_id)
                     if (stenka.response.items != null)
                         if (stenka.response.items[id1].attachments != null)
-                        {
                             if (stenka.response.items[id1].attachments[0] != null)
                                 if (stenka.response.items[id1].attachments[0].photo != null)
                                 {
-                                    if (countphoto > stenka.response.items[id1].attachments[0].photo.owner_id)
-                                    {
-                                        int id = stenka.response.items[id1].attachments[0].photo.id;
-                                        int ownerid = stenka.response.items[id1].attachments[0].photo.owner_id;
-
-                                         if (textBox1.Text == "")
-            {
-                string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.idd + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
-                string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
-                Message message = JsonConvert.DeserializeObject<Message>(mess);
-                System.Threading.Thread.Sleep(700);
-                countphoto = countphoto - 1;
-            }
-                                        if (textBox1.Text != "")
-                                        {
-                                            string otpravka = "https://api.vk.com/method/messages.send?user_id=" + textBox1.Text + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
-                                            string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
-                                        Message message = JsonConvert.DeserializeObject<Message>(mess);
-                                        System.Threading.Thread.Sleep(700);
-                                        countphoto = countphoto - 1;
-                                        }
-                                        
-                                        
-                                    }
-
+                                    
+                                    string otpravka = "https://api.vk.com/method/messages.send?user_id=" + Form1.idd + "&attachment=photo" + ownerid + "_" + id + "&access_token=" + access_token + "&v=5.87";
+                                    string mess = Encoding.UTF8.GetString(client.DownloadData(otpravka));
+                                    Message message = JsonConvert.DeserializeObject<Message>(mess);
+                                    System.Threading.Thread.Sleep(700);
+                                    countphoto = countphoto - 1;
                                 }
-                        }
+
                 }
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-            timer1.Enabled = false;
-        }
+    }
 
     }
 }

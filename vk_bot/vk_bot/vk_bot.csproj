@@ -49,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AButton.Designer.cs">
+      <DependentUpon>AButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="answer.cs" />
     <Compile Include="AutoAnswerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,17 +68,43 @@
     <Compile Include="AutoMessageForm.Designer.cs">
       <DependentUpon>AutoMessageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommentErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentErrorForm.Designer.cs">
+      <DependentUpon>CommentErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delete_friend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_friend.Designer.cs">
+      <DependentUpon>delete_friend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Friends.cs" />
     <Compile Include="LastPostComment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LastPostComment.Designer.cs">
       <DependentUpon>LastPostComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LikeClass.cs" />
+    <Compile Include="LikeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LikeForm.Designer.cs">
+      <DependentUpon>LikeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Post.cs">
       <SubType>Form</SubType>
@@ -80,6 +113,12 @@
       <DependentUpon>Post.cs</DependentUpon>
     </Compile>
     <Compile Include="Posti.cs" />
+    <Compile Include="PostsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostsForm.Designer.cs">
+      <DependentUpon>PostsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pusia.cs">
@@ -88,16 +127,27 @@
     <Compile Include="Pusia.Designer.cs">
       <DependentUpon>Pusia.cs</DependentUpon>
     </Compile>
+    <Compile Include="sendphotoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sendphotoForm.Designer.cs">
+      <DependentUpon>sendphotoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="xxxx.cs" />
     <EmbeddedResource Include="AutoAnswerForm.resx">
       <DependentUpon>AutoAnswerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AutoMessageForm.resx">
       <DependentUpon>AutoMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentErrorForm.resx">
+      <DependentUpon>CommentErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="delete_friend.resx">
       <DependentUpon>delete_friend.cs</DependentUpon>
@@ -108,8 +158,14 @@
     <EmbeddedResource Include="LastPostComment.resx">
       <DependentUpon>LastPostComment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LikeForm.resx">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostsForm.resx">
+      <DependentUpon>PostsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Pusia.resx">
       <DependentUpon>Pusia.cs</DependentUpon>
@@ -126,6 +183,7 @@
     <EmbeddedResource Include="sendphotoForm.resx">
       <DependentUpon>sendphotoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,6 +193,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\SobrietyFire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\nostarboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\plusSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\minusSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\crossSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\checkSmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
