@@ -40,14 +40,10 @@ namespace vk_bot
         {
             try
             {
-                WebClient client = new WebClient();
                 string request00 = "https://api.vk.com/method/friends.get?order=hints&offset=5&fields=photo_50&access_token=" + Form1.access_token + "&v=5.92";
+                WebClient client = new WebClient();
                 string answer = Encoding.UTF8.GetString(client.DownloadData(request00));
                 Friends Friend = JsonConvert.DeserializeObject<Friends>(answer);
-                for (int itemIndex = 0; itemIndex < Friend.response.count; itemIndex++)
-                {
-                    comboBox1.Items.Add(Friend.response.items[itemIndex].first_name + " " + Friend.response.items[itemIndex].last_name + " " + "id:" + " " + Friend.response.items[itemIndex].id);
-                }
             }
             catch
             {
@@ -129,6 +125,26 @@ namespace vk_bot
             if (textBox2.Text != "" &&  textBox1.Text != "")
             {
                 button1.Enabled = true;
+            }
+            if (textBox2.Text == "" && textBox1.Text == "")
+            {
+                button1.Enabled = false;
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LikeHelp LP = new LikeHelp();
+            LP.Show();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (label10.Text != "Нет")
+            {
+            string request5 = "https://api.vk.com/method/wall.get?owner_id=" + label10.Text + "&access_token=" + Form1.access_token + "&v=5.92";
+            WebClient client = new WebClient();
+            string answer = Encoding.UTF8.GetString(client.DownloadData(request5));
             }
         }
     }
