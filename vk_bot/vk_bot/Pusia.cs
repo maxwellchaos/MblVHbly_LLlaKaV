@@ -15,7 +15,7 @@ namespace vk_bot
    
     public partial class Pusia_ : Form
     {
-        public string access_token;
+        public static string access_token;
         string id;
         string[] answer = new string[7];
         string[] answer2 = new string[8];
@@ -197,6 +197,12 @@ namespace vk_bot
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vhod forma = new Vhod();
+            forma.Show();
         }
     }
 }

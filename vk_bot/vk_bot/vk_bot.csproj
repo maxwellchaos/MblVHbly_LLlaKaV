@@ -75,7 +75,19 @@
     <Compile Include="Pusia.Designer.cs">
       <DependentUpon>Pusia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rassilka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rassilka.Designer.cs">
+      <DependentUpon>Rassilka.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="Vhod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vhod.Designer.cs">
+      <DependentUpon>Vhod.cs</DependentUpon>
+    </Compile>
     <Compile Include="xxxx.cs" />
     <EmbeddedResource Include="AutoAnswerForm.resx">
       <DependentUpon>AutoAnswerForm.cs</DependentUpon>
@@ -97,6 +109,12 @@
     </Compile>
     <EmbeddedResource Include="Pusia.resx">
       <DependentUpon>Pusia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rassilka.resx">
+      <DependentUpon>Rassilka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vhod.resx">
+      <DependentUpon>Vhod.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

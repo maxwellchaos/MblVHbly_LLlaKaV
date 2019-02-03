@@ -90,7 +90,7 @@ namespace vk_bot
         private void Prostoknopka_Click(object sender, EventArgs e)
         {
             Pusia_ frm = new Pusia_();
-            frm.access_token = access_token;
+            Pusia_.access_token = access_token;
             frm.Show();
         }
        
