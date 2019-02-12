@@ -30,8 +30,6 @@ namespace vk_bot
             public int count { get; set; }
             public List<Item> items { get; set; }
         }
-
-        
             public Response response { get; set; }
         
     }

@@ -6,6 +6,108 @@ using System.Text;
 namespace vk_bot
 {
 
+    public class UploadServer
+    {
+        public Response response { get; set; }
+        public class Response
+        {
+            public string upload_url { get; set; }
+            public int album_id { get; set; }
+            public int user_id { get; set; }
+        }
+    }
+
+    public class PostRequest
+    {
+        public int server { get; set; }
+        public string photos_list { get; set; }
+        public int aid { get; set; }
+        public string hash { get; set; }
+    }
+
+    public class Photos
+    {
+        public Response[] response { get; set; }
+        public class Response
+        {
+            public int id { get; set; }
+            public int album_id { get; set; }
+            public int owner_id { get; set; }
+            public Size[] sizes { get; set; }
+            public string text { get; set; }
+            public int date { get; set; }
+
+            public class Size
+            {
+                public string type { get; set; }
+                public string url { get; set; }
+                public int width { get; set; }
+                public int height { get; set; }
+            }
+        }
+    }
+
+    public class Albums
+    {
+        public Response response { get; set; }
+        public class Response
+        {
+            public int count { get; set; }
+            public Item[] items { get; set; }
+            public class PrivacyView
+            {
+                public string category { get; set; }
+            }
+
+            public class PrivacyComment
+            {
+                public string category { get; set; }
+            }
+
+            public class Item
+            {
+                public int id { get; set; }
+                public int thumb_id { get; set; }
+                public int owner_id { get; set; }
+                public string title { get; set; }
+                public string description { get; set; }
+                public int created { get; set; }
+                public int updated { get; set; }
+                public int size { get; set; }
+                public int thumb_is_last { get; set; }
+                public PrivacyView privacy_view { get; set; }
+                public PrivacyComment privacy_comment { get; set; }
+            }
+        }
+    }
+
+    public class CreateAlbum
+    {
+        public Response response { get; set; }
+        public class Response
+        {
+            public int id { get; set; }
+            public int thumb_id { get; set; }
+            public int owner_id { get; set; }
+            public string title { get; set; }
+            public string description { get; set; }
+            public int created { get; set; }
+            public int updated { get; set; }
+            public int size { get; set; }
+            public PrivacyView privacy_view { get; set; }
+            public PrivacyComment privacy_comment { get; set; }
+
+            public class PrivacyView
+            {
+                public string category { get; set; }
+            }
+
+            public class PrivacyComment
+            {
+                public string category { get; set; }
+            }
+        }
+    }
 
     public class Wall
     {
@@ -320,41 +422,6 @@ namespace vk_bot
     }
 
 
-
-    public class RootObject
-    {
-
-
-        public Response response { get; set; }
-        public class Response
-        {
-            public int count { get; set; }
-            public Item[] items { get; set; }
-            public int unread_count { get; set; }
-            public class Item
-            {
-               // public Conversation conversation { get; set; }
-                public LastMessage last_message { get; set; }
-                public class LastMessage
-                {
-                    public int date { get; set; }
-                    public int from_id { get; set; }
-                    public int id { get; set; }
-                    public int @out { get; set; }
-                    public int peer_id { get; set; }
-                    public string text { get; set; }
-                    public int conversation_message_id { get; set; }
-                    public List<object> fwd_messages { get; set; }
-                    public bool important { get; set; }
-                    public int random_id { get; set; }
-                    public List<object> attachments { get; set; }
-                    public bool is_hidden { get; set; }
-                }
-            }
-        }
-
-
-    }
 
     public class UnreadMessages
     {
@@ -678,6 +745,72 @@ namespace vk_bot
         }
     }
 
+
+    public class getConversations
+    {
+        public Response response { get; set; }
+        public class Response
+        {
+            public int count { get; set; }
+            public List<Item> items { get; set; }
+            public int unread_count { get; set; }
+            public List<Profile> profiles { get; set; }
+            public List<Group> groups { get; set; }
+            public class Group
+            {
+                public int id { get; set; }
+                public string name { get; set; }
+                public string screen_name { get; set; }
+                public int is_closed { get; set; }
+                public string type { get; set; }
+                public string photo_50 { get; set; }
+                public string photo_100 { get; set; }
+                public string photo_200 { get; set; }
+            }
+            public class Profile
+            {
+                public int id { get; set; }
+                public string first_name { get; set; }
+                public string last_name { get; set; }
+                public int friend_status { get; set; }
+            }
+            public class Item
+            {
+                public Conversation conversation { get; set; }
+                public LastMessage last_message { get; set; }
+                public class LastMessage
+                {
+                    public int date { get; set; }
+                    public int from_id { get; set; }
+                    public int id { get; set; }
+                    public int @out { get; set; }
+                    public int peer_id { get; set; }
+                    public string text { get; set; }
+                    public int conversation_message_id { get; set; }
+                    public List<object> fwd_messages { get; set; }
+                    public bool important { get; set; }
+                    public int random_id { get; set; }
+                    public List<object> attachments { get; set; }
+                    public bool is_hidden { get; set; }
+                    public string payload { get; set; }
+                }
+                public class Conversation
+                {
+                    public Peer peer { get; set; }
+                    public int in_read { get; set; }
+                    public int out_read { get; set; }
+                    public int last_message_id { get; set; }
+                    public class Peer
+                    {
+                        public int id { get; set; }
+                        public string type { get; set; }
+                        public int local_id { get; set; }
+                    }
+                }
+            }
+        }
+
+    }
 }
 
 
